@@ -10211,3 +10211,15 @@ h2
     margin-bottom : 20px;
 
 }
+
+.food_researched
+{
+    background-color : black;
+    color : white;
+    font-size : 40px;
+}
+
+.page-section-title-research {
+  padding: 3rem 0;
+}
+
