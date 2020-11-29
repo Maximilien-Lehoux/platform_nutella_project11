@@ -10203,3 +10203,11 @@ h2
 {
     color : black;
 }
+
+.logo_telephone, .logo_mail
+{
+    width : 80px;
+    height : auto;
+    margin-bottom : 20px;
+
+}
