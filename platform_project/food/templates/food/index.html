@@ -24,14 +24,24 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Pur beurre</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                    <img class="logo_pur_beurre" src="{% static 'food/img/logo_pur_beurre.png' %}"/> Pur beurre</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger">
+                            <label for="name"></label>
+                            <input type="text" id="name" name="name" size="10" value="Chercher">
+                        </a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">
+                            <img class="logo_user" src="{% static 'food/img/logo_user.png' %}"/>
+                        </a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">
+                            <img class="logo_carrot" src="{% static 'food/img/logo_carrot.png' %}"/>
+                        </a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">
+                            <img class="logo_disconnection" src="{% static 'food/img/logo_disconnection.png' %}"/>
+                        </a></li>
                     </ul>
                 </div>
             </div>
@@ -41,12 +51,17 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+                        <h1 class="text-white font-weight-bold">Du gras, oui, mais de qualités ! </h1><br>
+                        <h2>Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
                         <hr class="divider my-4" />
                     </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Produits">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">Chercher</button>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,18 +71,24 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">We've got what you need!</h2>
+                        <h2 class="text-white mt-0">Colette et Remy</h2>
                         <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+                        <p class="text-white-50 mb-4">Pur Beurre est l'initiative de deux amoureux de la gastronomie française, Colette Tatou et Rémy, que vous avez déjà certainement rencontrés dans notre excellent restaurant Ratatouille.<br><br>
+                        Colette Tatou : "Nous aimons tous manger, surtout en France ! Personnellement, une baguette fraîche, du bon fromage de chèvre et un bon vin rouge me suffisent amplement. Comme tout le monde, je fais mes courses au supermarché. Mais petit à petit je me suis rendue compte, surtout lorsque nous avons ouvert le restaurant, que je pouvais remplacer les produits aseptisés que j'avais l'habitude d'acheter par de bons produits du terroir Et souvent pour le même prix !"<br><br>
+                        Remy : "Pour ma part je me rendais déjà dans bien des magasins car j'aime beaucoup me balader, surtout dans les caves et les cuisines. Je connaissais par coeur le contenu des boutiques bio (dont je raffole) ainsi que les ingrédients de tous les aliments vendus. Lorsque Colette m'a demandé si elle pouvait remplacer son Nutella matinal par un aliment plus sain, je savais tout de suite où le trouver. L'idée de Pur Beurre était née !" <br><br>
+                        </p>
                     </div>
+                </div>
+                <div class="row">
+                    <img class="col-lg-4 offset-lg-1 col-xs-12" src="{% static 'food/img/colette.jpg' %}"/>
+                    <img class="col-lg-6 col-xs-12" src="{% static 'food/img/remy.jpg' %}"/>
                 </div>
             </div>
         </section>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
-                <h2 class="text-center mt-0">At Your Service</h2>
+                <h2 class="text-center mt-0 title_contact">Contactez-nous !</h2>
                 <hr class="divider my-4" />
                 <div class="row">
                     <div class="col-lg-3 col-md-6 text-center">

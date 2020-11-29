@@ -10164,3 +10164,42 @@ header.masthead h1 {
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75);
 }
+
+.logo_pur_beurre
+{
+    height : 50px;
+    width : auto;
+}
+
+#name
+{
+    text-align : center;
+}
+
+.logo_user
+{
+    height : 40px;
+    width : auto;
+}
+
+.logo_carrot
+{
+    height : 50px;
+    width : auto;
+}
+
+.logo_disconnection
+{
+    height : 40px;
+    width : auto;
+}
+
+h2
+{
+    color : white;
+}
+
+.title_contact
+{
+    color : black;
+}
