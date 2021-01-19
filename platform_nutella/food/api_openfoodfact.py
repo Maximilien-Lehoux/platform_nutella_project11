@@ -16,7 +16,7 @@ CATEGORIES = ["volailles",
 
 category_example = ["volailles"]
 
-NUMBER_PRODUCTS = 500
+NUMBER_PRODUCTS = 100
 
 payload_products_generic_name = {
                     'search_terms': 'nutella',
@@ -62,8 +62,6 @@ class DataApi:
         response = requests.get(self.url, params=payload_products_generic_name)
         if 'json' in response.headers.get('Content-Type'):
             data = response.json()["products"][0]["generic_name"]
-            with open ("product_name_json.json", "w") as file:
-                json.dump(data, file, sort_keys=True, indent=4)
         else:
             print('response content is not in json format.')
             data = 'spam'
@@ -94,11 +92,9 @@ example_data_api = DataApi(URL_GENERAL)
 data_nutella = example_data_api.get_generic_name_food()
 print(data_nutella)
 
-data_nutella_generic = example_data_api.get_data_products_category()
-print(data_nutella_generic)
 
-# data_products_category = example_data_api.select_key_test('product_name_fr', 'image_front_thumb_url', 'nutrition_grade_fr', 'url')
-# print(data_products_category[1])
+data_products_category = example_data_api.select_key_test('product_name_fr', 'image_front_thumb_url', 'nutrition_grade_fr', 'url')
+print(data_products_category)
 
 
 # 'image_front_thumb_url'
