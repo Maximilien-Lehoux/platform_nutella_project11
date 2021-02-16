@@ -22,6 +22,7 @@ from food import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^food/', include('food.urls')),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls)
 ]
 
