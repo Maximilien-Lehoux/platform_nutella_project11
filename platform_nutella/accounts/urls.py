@@ -3,7 +3,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^login/$', views.login, name="login"),
+    url(r'^login/$', views.login_page, name="login_page"),
     url(r'^register/$', views.register, name="register"),
-    url(r'^get_name/$', views.get_name, name="get_name"),
 ]

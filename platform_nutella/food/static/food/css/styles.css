@@ -10223,3 +10223,11 @@ h2
   padding: 3rem 0;
 }
 
+.line_nav_space {
+    height : 150px;
+}
+
+.line_footer_space{
+    height : 100px;
+}
+
