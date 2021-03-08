@@ -10,13 +10,18 @@
           <h1 class="mt-2">Identifies-toi</h1>
           <hr class="mt-0 mb-4">
 
-         <form action="{% url 'login_page' %}" method="post" novalidate>
-            {% csrf_token %}
-            {{ form | crispy }}
-            <input type="submit" value="S'identifier"  class="btn btn-success">
-         </form>
+             <form action="{% url 'login_page' %}" method="post" novalidate>
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="S'identifier"  class="btn btn-success">
+             </form>
+
+          <div class="line_register_or_not_space">
+             <a href="{% url 'register' %}">Vous n'êtes pas encore enregistré ? Cliquez-ici</a>
+          </div>
 
         </div>
+
       </div>
     </div>
 
