@@ -85,8 +85,12 @@ class DataApi:
 # example_data_api = DataApi("cassoulet")
 
 # data_products_category = example_data_api.select_key_test()
-# print(data_products_category)
-# print(len(data_products_category))
+
+
+
+
+
+
 
 # 'image_front_thumb_url'
 # 'selected_images': {'front': {'display': {'fr'

@@ -17,9 +17,10 @@
     <div class="container-fluid">
         <div class="row">
             <ul>
-                {% for data_product_category in data_products_category %}
-                <li>{{ data_product_category }}</li>
+                {% for food_substitute in foods_substitutes %}
+                    <li>{{ food_substitute.name }}</li>
                 {% endfor %}
+                blabla
             </ul>
         </div>
     </div>
