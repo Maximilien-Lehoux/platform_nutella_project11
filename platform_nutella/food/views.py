@@ -51,8 +51,8 @@ def research(request):
         current_user = request.user
         print(current_user.id)
 
-    else:
-        return redirect('%s?next=%s' % (settings.login_page, request.path))
+    elif request.method == 'POST' and not request.user.is_authenticated:
+        return redirect('accounts:login_page')
 
     return render(request, 'food/research.html', context)
 
