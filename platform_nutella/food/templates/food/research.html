@@ -16,14 +16,33 @@
 <section>
     <div class="container-fluid">
         <div class="row">
-            <ul>
-                {% for food_substitute in foods_substitutes %}
-                    <li>{{ food_substitute.name }}</li>
-                {% endfor %}
-                blabla
-            </ul>
+
+            {% for food_substitute in foods_substitutes %}
+                <div class="col-sm-4 text-center">
+                    <a href="/">
+                        <img class="img-responsive" src="{{ food_substitute.image }}" alt="{{ food_substitute.name }}">
+                    </a>
+                    <h3><a href="{{ food_substitute.url }}">{{ food_substitute.name }}</a></h3>
+                    <h4>{{ food_substitute.nutriscore }}</h4>
+
+                    <form action="{% url 'food:research' %}" method="post">
+                        {% csrf_token %}
+
+                        <input type="hidden" value="{{ food_substitute.pk }}" id="food_substitute_pk" name="food_substitute_pk">
+
+                        <input type="submit" value="sauvegarder"  class="btn btn-success">
+                    </form>
+
+                </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+                    <div class="clearfix"></div>
+                {% endif %}
+
+            {% endfor %}
+
         </div>
     </div>
 </section>
-
 {% endblock %}
+
