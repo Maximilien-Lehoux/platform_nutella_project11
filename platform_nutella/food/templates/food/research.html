@@ -25,7 +25,7 @@
                     <h3><a href="{{ food_substitute.url }}">{{ food_substitute.name }}</a></h3>
                     <h4>{{ food_substitute.nutriscore }}</h4>
 
-                    <form action="{% url 'food:research' %}" method="post">
+                    <form action="{% url 'food:save_food' %}" method="post">
                         {% csrf_token %}
 
                         <input type="hidden" value="{{ food_substitute.pk }}" id="food_substitute_pk" name="food_substitute_pk">

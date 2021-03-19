@@ -8,7 +8,7 @@ from django.shortcuts import redirect
 
 
 from .api_openfoodfact import DataApi
-from .models import Food, FoodSubstitute
+from .models import Food, FoodSubstitute, FoodsSaved
 
 
 def index(request):
@@ -16,12 +16,12 @@ def index(request):
 
 
 def research(request):
-    logout(request)
+    # logout(request)
 
-    Food.objects.filter(name="cassoulet").delete()
-    Food.objects.all()
+    Food.objects.all().delete()
+    # Food.objects.all()
 
-    food_choose = "cassoulet"
+    food_choose = "petit beurre"
 
     data_api_openfoodfact = DataApi(food_choose)
     data_products_category = data_api_openfoodfact.select_key_test()
@@ -35,7 +35,11 @@ def research(request):
         nutriscore = (data_product_category[2])
         url = (data_product_category[3])
 
-        food_substitutes = FoodSubstitute(name=name, image=image, nutriscore=nutriscore, url=url, food_id=name_food.pk)
+        food_substitutes = FoodSubstitute(name=name,
+                                          image=image,
+                                          nutriscore=nutriscore,
+                                          url=url,
+                                          food_id=name_food.pk)
         food_substitutes.save()
 
     foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
@@ -44,6 +48,12 @@ def research(request):
         'foods_substitutes': foods_substitutes
     }
 
+    return render(request, 'food/research.html', context)
+
+# env\Scripts\activate.bat
+
+
+def save_food(request):
     if request.method == 'POST' and request.user.is_authenticated:
         # create a form instance and populate it with data from the request:
         food_substitute_id = request.POST.get("food_substitute_pk")
@@ -51,11 +61,22 @@ def research(request):
         current_user = request.user
         print(current_user.id)
 
+        food_substitute_choose = FoodSubstitute.objects.get(pk=int(food_substitute_id))
+        print(food_substitute_choose.name)
+
+        food_substitute_choose_save = FoodsSaved(name=food_substitute_choose.name,
+                                                 image=food_substitute_choose.image,
+                                                 nutriscore=food_substitute_choose.nutriscore,
+                                                 url=food_substitute_choose.url,
+                                                 user_id=current_user.id)
+        food_substitute_choose_save.save()
+
     elif request.method == 'POST' and not request.user.is_authenticated:
+        print("tu n'es pas authentifié)")
         return redirect('accounts:login_page')
 
-    return render(request, 'food/research.html', context)
+    return redirect('food:research')
 
-# env\Scripts\activate.bat
+
 
 

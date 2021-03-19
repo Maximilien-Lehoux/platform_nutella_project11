@@ -32,6 +32,7 @@ info2 = "image_front_thumb_url"
 info3 = "nutrition_grade_fr"
 info4 = "url"
 
+
 class DataApi:
     """the request to the API which contains the parameters"""
     def __init__(self, product):
@@ -43,10 +44,10 @@ class DataApi:
             'json': 'true',
         }
 
-    def get_generic_name_food(self):
+    def get_categories_name_food(self):
         response = requests.get(self.url, params=self.payload_products_generic_name)
         if 'json' in response.headers.get('Content-Type'):
-            data = response.json()["products"][0]["generic_name"]
+            data = response.json()["products"][0]["categories"]
         else:
             print('response content is not in json format.')
             data = 'spam'
@@ -70,8 +71,10 @@ class DataApi:
     def select_key_test(self, key1=info1, key2=info2, key3=info3, key4=info4):
         """The different keys are sorted and placed in lists"""
         list_general = []
-        name_category_product = self.get_generic_name_food()
-        data = self.get_data_products_category(name_category_product)
+        categories = self.get_categories_name_food()
+        category = self.get_category_selected(categories)
+
+        data = self.get_data_products_category(category)
         for item in data:
             product_list = [item.get(key1), item.get(key2), item.get(key3),
                             item.get(key4)]
@@ -79,14 +82,28 @@ class DataApi:
                 list_general.append(product_list)
         return list_general
 
+    def get_category_selected(self, categories):
+        categories_list = categories.split(",")
+        category = categories_list[0]
+        return category
+
+
 # 'product_name_fr', 'generic_name_fr', 'url', 'image_front_thumb_url', 'nutrition_grade_fr'
 
 
 # example_data_api = DataApi("cassoulet")
+# data_categories = example_data_api.get_categories_name_food()
+# category = example_data_api.get_category_selected(data_categories)
+
+# print(category)
+
 
 # data_products_category = example_data_api.select_key_test()
 
 
+
+
+# print(data_products_category)
 
 
 
