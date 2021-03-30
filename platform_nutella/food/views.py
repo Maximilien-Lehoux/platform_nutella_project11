@@ -9,10 +9,14 @@ from django.shortcuts import redirect
 
 from .api_openfoodfact import DataApi
 from .models import Food, FoodSubstitute, FoodsSaved
+from .form_food import ResearchFood
 
 
 def index(request):
-    return render(request, 'food/index.html')
+
+    form = ResearchFood()
+
+    return render(request, 'food/index.html', {'form': form})
 
 
 def research(request):
@@ -21,7 +25,8 @@ def research(request):
     Food.objects.all().delete()
     # Food.objects.all()
 
-    food_choose = "petit beurre"
+
+    food_choose = "Cassoulet"
 
     data_api_openfoodfact = DataApi(food_choose)
     data_products_category = data_api_openfoodfact.select_key_test()
@@ -76,6 +81,19 @@ def save_food(request):
         return redirect('accounts:login_page')
 
     return redirect('food:research')
+
+def select_food(request):
+    if request.method == 'POST':
+        form = ResearchFood(request.POST)
+        # create a form instance and populate it with data from the request:
+        if form.is_valid():
+            test_food_choose = request.POST.get("research_food")
+            print(test_food_choose)
+
+    else:
+        form = ResearchFood()
+
+    return render(request, 'food/index.html', {'form': form})
 
 
 
