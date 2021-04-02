@@ -12,7 +12,12 @@ from .models import Food, FoodSubstitute, FoodsSaved
 
 
 def index(request):
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        return redirect('food:research')
+
     return render(request, 'food/index.html')
+
 
 
 def research(request):
@@ -21,7 +26,8 @@ def research(request):
     Food.objects.all().delete()
     # Food.objects.all()
 
-    food_choose = "petit beurre"
+    food_choose = request.POST.get("food_research")
+    print(food_choose)
 
     data_api_openfoodfact = DataApi(food_choose)
     data_products_category = data_api_openfoodfact.select_key_test()
@@ -57,12 +63,9 @@ def save_food(request):
     if request.method == 'POST' and request.user.is_authenticated:
         # create a form instance and populate it with data from the request:
         food_substitute_id = request.POST.get("food_substitute_pk")
-        print(food_substitute_id)
         current_user = request.user
-        print(current_user.id)
 
         food_substitute_choose = FoodSubstitute.objects.get(pk=int(food_substitute_id))
-        print(food_substitute_choose.name)
 
         food_substitute_choose_save = FoodsSaved(name=food_substitute_choose.name,
                                                  image=food_substitute_choose.image,
