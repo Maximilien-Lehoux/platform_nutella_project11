@@ -14,11 +14,19 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="input-group">
+<<<<<<< HEAD
                             <form action="{% url 'food:select_food' %}" method="post" novalidate>
                                 {% csrf_token %}
                                 {{ form | crispy }}
                                 <span class="input-group-btn">
                                     <button class="btn btn-primary" type="button">Chercher</button>
+=======
+                            <form action="{% url 'food:research' %}" method="post">
+                                {% csrf_token %}
+                                <input type="text" class="form-control" placeholder="Produits" name="food_research">
+                                <span class="input-group-btn">
+                                    <input type="submit" value="Chercher"  class="btn btn-success">
+>>>>>>> test_search
                                 </span>
                             </form>
                         </div>

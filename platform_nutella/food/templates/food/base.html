@@ -30,8 +30,14 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger">
-                            <label for="name"></label>
-                            <input type="text" id="name" name="name" size="10" value="Chercher">
+
+                            <form action="{% url 'food:research' %}" method="post">
+                                <label for="name"></label>
+                                {% csrf_token %}
+                                <input type="text" id="name" name="food_research" size="10" placeholder="Chercher">
+
+                            </form>
+
                         </a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">
                             <img class="logo_user" src="{% static 'food/img/logo_user.png' %}"/>
