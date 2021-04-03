@@ -19,7 +19,6 @@ def index(request):
     return render(request, 'food/index.html')
 
 
-
 def research(request):
     # logout(request)
 
