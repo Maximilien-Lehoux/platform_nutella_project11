@@ -1,36 +1,19 @@
 import json
 import requests
+from django.shortcuts import redirect
 
-API_TO_PRODUCT_FIELDS = {
-    'product_name_fr': 'name',
-    'url': 'url',
-    'nutrition_grade_fr': 'nutriscore',
-    'category': 'category'
-    }
+# from .configuration import number_products
+# from .constants import INFO1, INFO2, INFO3, INFO4, URL_GENERAL
 
-NUMBER_PRODUCTS = 100
-
-payload_products_generic_name = {
-                    'search_terms': 'coquillette',
-                    'page_size': NUMBER_PRODUCTS,
-                    'json': 'true',
-                    }
-
-payload_substitutes = {
-                    'action': 'process',
-                    'tagtype_0': 'categories',
-                    'tag_contains_0': 'contains',
-                    'tag_0': 'Pâtes alimentaire',
-                    'page_size': NUMBER_PRODUCTS,
-                    'json': 'true',
-                    }
-
+number_products = 100
 
 URL_GENERAL = 'https://fr.openfoodfacts.org/cgi/search.pl'
-info1 = "product_name_fr"
-info2 = "image_front_thumb_url"
-info3 = "nutrition_grade_fr"
-info4 = "url"
+
+# the different category keys to insert them into the database
+INFO1 = "product_name_fr"
+INFO2 = "image_front_thumb_url"
+INFO3 = "nutrition_grade_fr"
+INFO4 = "url"
 
 
 class DataApi:
@@ -40,35 +23,42 @@ class DataApi:
 
         self.payload_products_generic_name = {
             'search_terms': product,
-            'page_size': NUMBER_PRODUCTS,
+            'page_size': number_products,
             'json': 'true',
         }
 
     def get_categories_name_food(self):
-        response = requests.get(self.url, params=self.payload_products_generic_name)
-        if 'json' in response.headers.get('Content-Type'):
+        """Obtain the food category chosen by the user"""
+        response = requests.get(self.url,
+                                params=self.payload_products_generic_name)
+        # if 'json' in response.headers.get('Content-Type'):
+        try:
             data = response.json()["products"][0]["categories"]
-        else:
-            print('response content is not in json format.')
-            data = 'spam'
+        except KeyError:
+            data = "cassoulet"
+            return data
+        # else:
+            # print('response content is not in json format.')
+            # data = 'spam'
         return data
 
     def get_data_products_category(self, category_product):
+        """get the data of the chosen category"""
         payload_substitutes = {
             'action': 'process',
             'tagtype_0': 'categories',
             'tag_contains_0': 'contains',
             'tag_0': category_product,
-            'page_size': NUMBER_PRODUCTS,
+            'page_size': number_products,
             'json': 'true',
         }
         response = requests.get(self.url, params=payload_substitutes).json()
-        data = response["products"]
-        with open("file_json.json", "w") as file:
-            json.dump(data, file, sort_keys=True, indent=4)
+        data = response["products"][0]["nutriments"]
+        with open("data_file.json", "w") as write_file:
+            json.dump(data, write_file, indent=4)
         return data
 
-    def select_key_test(self, key1=info1, key2=info2, key3=info3, key4=info4):
+    def select_key_test(self, key1=INFO1, key2=INFO2, key3=INFO3, key4=INFO4):
         """The different keys are sorted and placed in lists"""
         list_general = []
         categories = self.get_categories_name_food()
@@ -83,32 +73,15 @@ class DataApi:
         return list_general
 
     def get_category_selected(self, categories):
+        """Sort the name of the food categories to obtain valid data"""
         categories_list = categories.split(",")
         category = categories_list[0]
         return category
 
 
-# 'product_name_fr', 'generic_name_fr', 'url', 'image_front_thumb_url', 'nutrition_grade_fr'
+exemple_data_api = DataApi("petit beurre")
+# data_substitute = exemple_data_api.select_key_test()
 
-
-# example_data_api = DataApi("cassoulet")
-# data_categories = example_data_api.get_categories_name_food()
-# category = example_data_api.get_category_selected(data_categories)
-
-# print(category)
-
-
-# data_products_category = example_data_api.select_key_test()
-
-
-
-
-# print(data_products_category)
-
-
-
-
-
-# 'image_front_thumb_url'
-# 'selected_images': {'front': {'display': {'fr'
+example_fat = exemple_data_api.get_data_products_category("conserves")
+print(example_fat)
 

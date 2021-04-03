@@ -26,7 +26,6 @@ def research(request):
     # Food.objects.all()
 
     food_choose = request.POST.get("food_research")
-    print(food_choose)
 
     data_api_openfoodfact = DataApi(food_choose)
     data_products_category = data_api_openfoodfact.select_key_test()
@@ -74,7 +73,6 @@ def save_food(request):
         food_substitute_choose_save.save()
 
     elif request.method == 'POST' and not request.user.is_authenticated:
-        print("tu n'es pas authentifié)")
         return redirect('accounts:login_page')
 
     return redirect('food:research')

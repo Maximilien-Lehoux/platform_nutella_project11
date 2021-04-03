@@ -3,10 +3,12 @@ from django.contrib.auth.models import User
 
 
 class Food(models.Model):
+    """creation of the selected food table"""
     name = models.CharField(max_length=200)
 
 
 class FoodSubstitute(models.Model):
+    """creation of the food subtitus table"""
     name = models.CharField(max_length=200)
     image = models.URLField()
     nutriscore = models.CharField(max_length=200)
@@ -15,6 +17,7 @@ class FoodSubstitute(models.Model):
 
 
 class FoodsSaved(models.Model):
+    """products saved table creation"""
     name = models.CharField(max_length=200)
     image = models.URLField()
     nutriscore = models.CharField(max_length=200)
