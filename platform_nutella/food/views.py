@@ -38,12 +38,20 @@ def research(request):
         image = (data_product_category[1])
         nutriscore = (data_product_category[2])
         url = (data_product_category[3])
+        fat = (data_product_category[4])
+        fat_saturated = (data_product_category[5])
+        sugar = (data_product_category[6])
+        salt = (data_product_category[7])
 
         food_substitutes = FoodSubstitute(name=name,
                                           image=image,
                                           nutriscore=nutriscore,
                                           url=url,
-                                          food_id=name_food.pk)
+                                          food_id=name_food.pk,
+                                          nutriments_fat=fat,
+                                          nutriments_fat_saturated=fat_saturated,
+                                          nutriments_salt=salt,
+                                          nutriments_sugars=sugar)
         food_substitutes.save()
 
     foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
@@ -69,13 +77,30 @@ def save_food(request):
                                                  image=food_substitute_choose.image,
                                                  nutriscore=food_substitute_choose.nutriscore,
                                                  url=food_substitute_choose.url,
-                                                 user_id=current_user.id)
+                                                 user_id=current_user.id,
+                                                 nutriments_fat=food_substitute_choose.nutriments_fat,
+                                                 nutriments_fat_saturated=food_substitute_choose.nutriments_fat_saturated,
+                                                 nutriments_salt=food_substitute_choose.nutriments_salt,
+                                                 nutriments_sugars=food_substitute_choose.nutriments_sugars
+                                                 )
         food_substitute_choose_save.save()
 
     elif request.method == 'POST' and not request.user.is_authenticated:
         return redirect('accounts:login_page')
 
-    return redirect('food:research')
+    return redirect('food:index')
+
+
+def details_food(request, product_id):
+
+    food_detail = FoodSubstitute.objects.get(pk=int(product_id))
+
+    context = {
+        'food_detail': food_detail
+    }
+
+    return render(request, 'food/details.html', context)
+
 
 
 

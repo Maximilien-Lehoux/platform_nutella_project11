@@ -35,15 +35,15 @@ class DataApi:
     def get_categories_name_food(self):
         """Obtain the food category chosen by the user"""
         response = requests.get(self.url, params=self.payload_products_generic_name)
-        # if 'json' in response.headers.get('Content-Type'):
-        try:
-            data = response.json()["products"][0]["categories"]
-        except KeyError:
-            data = "cassoulet"
-            return data
-        # else:
-            # print('response content is not in json format.')
-            # data = 'spam'
+        if 'json' in response.headers.get('Content-Type'):
+            try:
+                data = response.json()["products"][0]["categories"]
+            except KeyError:
+                data = "cassoulet"
+                return data
+        else:
+            print('response content is not in json format.')
+            data = 'spam'
         return data
 
     def get_data_products_category(self, category_product):
@@ -87,11 +87,11 @@ class DataApi:
         return category
 
 
-exemple_data_api = DataApi("cassoulet")
-data_substitute = exemple_data_api.select_key_test()
+# exemple_data_api = DataApi("cassoulet")
+# data_substitute = exemple_data_api.select_key_test()
 
 # example_fat = exemple_data_api.get_data_products_category("conserves")
 # print(example_fat)
 
-print(data_substitute)
+# print(data_substitute)
 

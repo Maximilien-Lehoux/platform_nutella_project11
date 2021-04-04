@@ -23,6 +23,7 @@
                         <img class="img-responsive" src="{{ food_substitute.image }}" alt="{{ food_substitute.name }}">
                     </a>
                     <h3><a href="{{ food_substitute.url }}">{{ food_substitute.name }}</a></h3>
+                    <a href="{% url 'food:details_food' product_id=food_substitute.pk %}">Fiche détails du produit</a>
                     <h4>{{ food_substitute.nutriscore }}</h4>
 
                     <form action="{% url 'food:save_food' %}" method="post">
