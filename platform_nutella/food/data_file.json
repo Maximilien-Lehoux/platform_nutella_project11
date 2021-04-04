@@ -1,50 +1,1898 @@
 {
-    "nutrition-score-fr_100g": -4,
-    "proteins": "1.2",
-    "energy-kcal_unit": "kcal",
-    "salt_value": "0.3",
-    "saturated-fat_100g": "0.1",
-    "energy_value": 110,
-    "energy-kcal_value": 26,
-    "energy_100g": 110,
-    "carbohydrates_unit": "g",
-    "fat_value": "0.2",
-    "sodium_100g": "0.12",
-    "fat_unit": "g",
-    "sodium_value": "0.12",
-    "sodium": "0.12",
-    "carbohydrates": "3.9",
-    "salt_100g": "0.3",
-    "fat_100g": "0.2",
-    "energy": 110,
-    "nova-group_serving": 3,
-    "saturated-fat_unit": "g",
-    "proteins_value": "1.2",
-    "energy-kj_value": 110,
-    "energy-kcal_100g": 26,
-    "energy-kj_100g": 110,
-    "nutrition-score-fr": -4,
-    "sugars_value": "2.8",
-    "sugars_unit": "g",
-    "energy_unit": "kJ",
-    "energy-kcal": 26,
-    "carbon-footprint-from-known-ingredients_product": 200,
-    "fruits-vegetables-nuts-estimate-from-ingredients_100g": "99.8",
-    "energy-kj": 110,
-    "nova-group_100g": 3,
-    "carbohydrates_value": "3.9",
-    "saturated-fat_value": "0.1",
-    "salt": "0.3",
-    "energy-kj_unit": "kJ",
-    "sugars": "2.8",
-    "proteins_100g": "1.2",
-    "carbohydrates_100g": "3.9",
-    "fat": "0.2",
-    "proteins_unit": "g",
-    "salt_unit": "g",
-    "sodium_unit": "g",
-    "saturated-fat": "0.1",
-    "nova-group": 3,
-    "carbon-footprint-from-known-ingredients_100g": "49.9",
-    "sugars_100g": "2.8"
+    "ingredients_ids_debug": [
+        "tomates-99-8",
+        "sel"
+    ],
+    "last_editor": "inf",
+    "nutrition_score_beverage": 0,
+    "teams_tags": [
+        "famille",
+        "weidmann",
+        "maxou34",
+        "swipe-studio"
+    ],
+    "image_small_url": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.200.jpg",
+    "nutriscore_data": {
+        "saturated_fat_ratio_value": 50,
+        "sugars": "2.8",
+        "fruits_vegetables_nuts_colza_walnut_olive_oils_value": 85,
+        "saturated_fat": "0.1",
+        "is_cheese": 0,
+        "positive_points": 5,
+        "sugars_points": 0,
+        "is_beverage": 0,
+        "saturated_fat_value": "0.1",
+        "fiber_value": 0,
+        "is_fat": 0,
+        "fruits_vegetables_nuts_colza_walnut_olive_oils_points": 5,
+        "energy_points": 0,
+        "score": -4,
+        "sugars_value": "2.8",
+        "sodium_points": 1,
+        "saturated_fat_ratio": 50,
+        "proteins_points": 0,
+        "proteins_value": "1.2",
+        "grade": "a",
+        "sodium_value": 120,
+        "sodium": 120,
+        "energy": 110,
+        "saturated_fat_points": 0,
+        "fiber_points": 0,
+        "fruits_vegetables_nuts_colza_walnut_olive_oils": 85,
+        "fiber": 0,
+        "energy_value": 110,
+        "is_water": 0,
+        "negative_points": 1,
+        "saturated_fat_ratio_points": 7,
+        "proteins": "1.2"
+    },
+    "states": "en:to-be-completed, en:nutrition-facts-completed, en:ingredients-completed, en:expiration-date-to-be-completed, en:packaging-code-to-be-completed, en:characteristics-completed, en:origins-completed, en:categories-completed, en:brands-completed, en:packaging-completed, en:quantity-completed, en:product-name-completed, en:photos-to-be-validated, en:packaging-photo-to-be-selected, en:nutrition-photo-to-be-selected, en:ingredients-photo-to-be-selected, en:front-photo-selected, en:photos-uploaded",
+    "teams": "famille,weidmann,maxou34,swipe-studio",
+    "packaging_tags": [
+        "conserve",
+        "tetra-pak",
+        "buatta",
+        "boite",
+        "dose",
+        "produkt",
+        "en-steel-tin"
+    ],
+    "creator": "kiliweb",
+    "last_image_dates_tags": [
+        "2020-12-19",
+        "2020-12",
+        "2020"
+    ],
+    "max_imgid": "47",
+    "nucleotides_tags": [],
+    "vitamins_tags": [],
+    "nutrition_score_warning_fruits_vegetables_nuts_from_category_value": 85,
+    "selected_images": {
+        "front": {
+            "display": {
+                "en": "https://static.openfoodfacts.org/images/products/80042556/front_en.207.400.jpg",
+                "de": "https://static.openfoodfacts.org/images/products/80042556/front_de.175.400.jpg",
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.400.jpg",
+                "it": "https://static.openfoodfacts.org/images/products/80042556/front_it.79.400.jpg"
+            },
+            "small": {
+                "en": "https://static.openfoodfacts.org/images/products/80042556/front_en.207.200.jpg",
+                "it": "https://static.openfoodfacts.org/images/products/80042556/front_it.79.200.jpg",
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.200.jpg",
+                "de": "https://static.openfoodfacts.org/images/products/80042556/front_de.175.200.jpg"
+            },
+            "thumb": {
+                "de": "https://static.openfoodfacts.org/images/products/80042556/front_de.175.100.jpg",
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.100.jpg",
+                "it": "https://static.openfoodfacts.org/images/products/80042556/front_it.79.100.jpg",
+                "en": "https://static.openfoodfacts.org/images/products/80042556/front_en.207.100.jpg"
+            }
+        },
+        "ingredients": {
+            "small": {
+                "de": "https://static.openfoodfacts.org/images/products/80042556/ingredients_de.191.200.jpg",
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/ingredients_fr.83.200.jpg"
+            },
+            "thumb": {
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/ingredients_fr.83.100.jpg",
+                "de": "https://static.openfoodfacts.org/images/products/80042556/ingredients_de.191.100.jpg"
+            },
+            "display": {
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/ingredients_fr.83.400.jpg",
+                "de": "https://static.openfoodfacts.org/images/products/80042556/ingredients_de.191.400.jpg"
+            }
+        },
+        "nutrition": {
+            "display": {
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/nutrition_fr.155.400.jpg",
+                "de": "https://static.openfoodfacts.org/images/products/80042556/nutrition_de.194.400.jpg"
+            },
+            "small": {
+                "de": "https://static.openfoodfacts.org/images/products/80042556/nutrition_de.194.200.jpg",
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/nutrition_fr.155.200.jpg"
+            },
+            "thumb": {
+                "de": "https://static.openfoodfacts.org/images/products/80042556/nutrition_de.194.100.jpg",
+                "fr": "https://static.openfoodfacts.org/images/products/80042556/nutrition_fr.155.100.jpg"
+            }
+        }
+    },
+    "ingredients_that_may_be_from_palm_oil_n": 0,
+    "states_tags": [
+        "en:to-be-completed",
+        "en:nutrition-facts-completed",
+        "en:ingredients-completed",
+        "en:expiration-date-to-be-completed",
+        "en:packaging-code-to-be-completed",
+        "en:characteristics-completed",
+        "en:origins-completed",
+        "en:categories-completed",
+        "en:brands-completed",
+        "en:packaging-completed",
+        "en:quantity-completed",
+        "en:product-name-completed",
+        "en:photos-to-be-validated",
+        "en:packaging-photo-to-be-selected",
+        "en:nutrition-photo-to-be-selected",
+        "en:ingredients-photo-to-be-selected",
+        "en:front-photo-selected",
+        "en:photos-uploaded"
+    ],
+    "photographers_tags": [
+        "kiliweb",
+        "openfoodfacts-contributors",
+        "didel",
+        "agamitsudo",
+        "date-limite-app",
+        "damaria",
+        "david45",
+        "annelaure2",
+        "vikalex",
+        "elcoco"
+    ],
+    "image_ingredients_small_url": "https://static.openfoodfacts.org/images/products/80042556/ingredients_fr.83.200.jpg",
+    "image_front_thumb_url": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.100.jpg",
+    "stores": "Intermarch\u00e9,Woolworths",
+    "labels_hierarchy": [],
+    "additives_debug_tags": [],
+    "categories_tags": [
+        "en:plant-based-foods-and-beverages",
+        "en:plant-based-foods",
+        "en:canned-foods",
+        "en:fruits-and-vegetables-based-foods",
+        "en:canned-plant-based-foods",
+        "en:vegetables-based-foods",
+        "en:canned-vegetables",
+        "en:tomatoes-and-their-products",
+        "en:tomatoes",
+        "en:canned-tomatoes",
+        "en:peeled-tomatoes",
+        "en:tomato-pulps"
+    ],
+    "traces_lc": "es",
+    "image_nutrition_thumb_url": "https://static.openfoodfacts.org/images/products/80042556/nutrition_fr.155.100.jpg",
+    "nutriscore_score_opposite": 4,
+    "_id": "80042556",
+    "manufacturing_places": "Italie",
+    "complete": 0,
+    "brands_tags": [
+        "mutti"
+    ],
+    "sources": [
+        {
+            "import_t": 1548773328,
+            "manufacturer": "0",
+            "name": "FoodRepo",
+            "images": [],
+            "url": "https://www.foodrepo.org/ch/products/23983",
+            "fields": [
+                "countries"
+            ],
+            "id": "openfood-ch",
+            "source_licence_url": "https://creativecommons.org/licenses/by/4.0/",
+            "source_licence": "Creative Commons Attribution 4.0 International License"
+        }
+    ],
+    "nutrition_grades_tags": [
+        "a"
+    ],
+    "labels_lc": "en",
+    "ingredients_text_en": "tomatoes of 99,8%, salt",
+    "last_edit_dates_tags": [
+        "2021-01-27",
+        "2021-01",
+        "2021"
+    ],
+    "categories_hierarchy": [
+        "en:plant-based-foods-and-beverages",
+        "en:plant-based-foods",
+        "en:canned-foods",
+        "en:fruits-and-vegetables-based-foods",
+        "en:canned-plant-based-foods",
+        "en:vegetables-based-foods",
+        "en:canned-vegetables",
+        "en:tomatoes-and-their-products",
+        "en:tomatoes",
+        "en:canned-tomatoes",
+        "en:peeled-tomatoes",
+        "en:tomato-pulps"
+    ],
+    "ecoscore_tags": [
+        "a"
+    ],
+    "ingredients_from_palm_oil_tags": [],
+    "labels_tags": [],
+    "image_front_url": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.400.jpg",
+    "nova_group_tags": [
+        "not-applicable"
+    ],
+    "nova_groups": "3",
+    "lc": "en",
+    "allergens_from_user": "(es) ",
+    "labels_old": "",
+    "pnns_groups_2": "Vegetables",
+    "allergens_hierarchy": [],
+    "generic_name_fr": "",
+    "data_quality_bugs_tags": [],
+    "packaging": "conserve,tetra pak,buatta,bo\u00eete,Dose,produkt,en:steel-tin",
+    "additives_prev_original_tags": [],
+    "additives_n": 0,
+    "ecoscore_grade": "a",
+    "interface_version_modified": "20150316.jqm2",
+    "allergens_lc": "es",
+    "amino_acids_prev_tags": [],
+    "manufacturing_places_tags": [
+        "italie"
+    ],
+    "quantity": "400g",
+    "countries_beforescanbot": "Australia,B\u00e9lgica,Canad\u00e1,Francia,Alemania,Italia,Pa\u00edses Bajos,Suiza,Estados Unidos",
+    "countries": "Australia,Austria,B\u00e9lgica,Canad\u00e1,Francia,Alemania,Italia,Pa\u00edses Bajos,Noruega,Espa\u00f1a,Suiza,Estados Unidos",
+    "ingredients_n": 2,
+    "nova_group": 3,
+    "states_hierarchy": [
+        "en:to-be-completed",
+        "en:nutrition-facts-completed",
+        "en:ingredients-completed",
+        "en:expiration-date-to-be-completed",
+        "en:packaging-code-to-be-completed",
+        "en:characteristics-completed",
+        "en:origins-completed",
+        "en:categories-completed",
+        "en:brands-completed",
+        "en:packaging-completed",
+        "en:quantity-completed",
+        "en:product-name-completed",
+        "en:photos-to-be-validated",
+        "en:packaging-photo-to-be-selected",
+        "en:nutrition-photo-to-be-selected",
+        "en:ingredients-photo-to-be-selected",
+        "en:front-photo-selected",
+        "en:photos-uploaded"
+    ],
+    "pnns_groups_1_tags": [
+        "fruits-and-vegetables",
+        "known"
+    ],
+    "image_ingredients_url": "https://static.openfoodfacts.org/images/products/80042556/ingredients_fr.83.400.jpg",
+    "nutriments": {
+        "energy-kcal_unit": "kcal",
+        "proteins": "1.2",
+        "nutrition-score-fr_100g": -4,
+        "carbohydrates_unit": "g",
+        "energy_100g": 110,
+        "energy-kcal_value": 26,
+        "energy_value": 110,
+        "saturated-fat_100g": "0.1",
+        "salt_value": "0.3",
+        "fat_100g": "0.2",
+        "energy": 110,
+        "salt_100g": "0.3",
+        "carbohydrates": "3.9",
+        "sodium": "0.12",
+        "sodium_value": "0.12",
+        "fat_unit": "g",
+        "sodium_100g": "0.12",
+        "fat_value": "0.2",
+        "energy-kj_value": 110,
+        "proteins_value": "1.2",
+        "saturated-fat_unit": "g",
+        "nova-group_serving": 3,
+        "sugars_value": "2.8",
+        "nutrition-score-fr": -4,
+        "energy-kj_100g": 110,
+        "energy-kcal_100g": 26,
+        "energy-kcal": 26,
+        "energy_unit": "kJ",
+        "sugars_unit": "g",
+        "energy-kj_unit": "kJ",
+        "salt": "0.3",
+        "saturated-fat_value": "0.1",
+        "carbohydrates_value": "3.9",
+        "energy-kj": 110,
+        "nova-group_100g": 3,
+        "carbon-footprint-from-known-ingredients_product": 200,
+        "fruits-vegetables-nuts-estimate-from-ingredients_100g": "99.8",
+        "carbon-footprint-from-known-ingredients_100g": "49.9",
+        "nova-group": 3,
+        "sugars_100g": "2.8",
+        "saturated-fat": "0.1",
+        "salt_unit": "g",
+        "sodium_unit": "g",
+        "proteins_unit": "g",
+        "fat": "0.2",
+        "carbohydrates_100g": "3.9",
+        "proteins_100g": "1.2",
+        "sugars": "2.8"
+    },
+    "unknown_ingredients_n": 0,
+    "additives_old_tags": [],
+    "image_ingredients_thumb_url": "https://static.openfoodfacts.org/images/products/80042556/ingredients_fr.83.100.jpg",
+    "ingredients_text_with_allergens": "tomatoes of 99,8%, salt",
+    "nutrition_score_warning_no_fiber": 1,
+    "code": "80042556",
+    "images": {
+        "41": {
+            "sizes": {
+                "100": {
+                    "w": 100,
+                    "h": 24
+                },
+                "400": {
+                    "h": 95,
+                    "w": 400
+                },
+                "full": {
+                    "h": 421,
+                    "w": 1779
+                }
+            },
+            "uploaded_t": 1602468271,
+            "uploader": "vikalex"
+        },
+        "31": {
+            "sizes": {
+                "full": {
+                    "h": 2612,
+                    "w": 1958
+                },
+                "400": {
+                    "h": 400,
+                    "w": 300
+                },
+                "100": {
+                    "h": 100,
+                    "w": 75
+                }
+            },
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1537205281
+        },
+        "1": {
+            "sizes": {
+                "full": {
+                    "h": 1200,
+                    "w": 656
+                },
+                "400": {
+                    "h": 400,
+                    "w": 219
+                },
+                "100": {
+                    "h": 100,
+                    "w": 55
+                }
+            },
+            "uploader": "kiliweb",
+            "uploaded_t": 1536519302
+        },
+        "36": {
+            "uploaded_t": 1586606563,
+            "uploader": "date-limite-app",
+            "sizes": {
+                "400": {
+                    "w": 276,
+                    "h": 400
+                },
+                "full": {
+                    "h": 1449,
+                    "w": 1000
+                },
+                "100": {
+                    "h": 100,
+                    "w": 69
+                }
+            }
+        },
+        "ingredients_de": {
+            "rev": "191",
+            "sizes": {
+                "200": {
+                    "w": 169,
+                    "h": 200
+                },
+                "100": {
+                    "w": 85,
+                    "h": 100
+                },
+                "400": {
+                    "w": 339,
+                    "h": 400
+                },
+                "full": {
+                    "w": 2172,
+                    "h": 2565
+                }
+            },
+            "normalize": null,
+            "x1": null,
+            "geometry": "0x0-0-0",
+            "angle": null,
+            "y2": null,
+            "y1": null,
+            "imgid": "45",
+            "x2": null,
+            "white_magic": null
+        },
+        "22": {
+            "sizes": {
+                "100": {
+                    "w": 75,
+                    "h": 100
+                },
+                "400": {
+                    "w": 300,
+                    "h": 400
+                },
+                "full": {
+                    "h": 3264,
+                    "w": 2448
+                }
+            },
+            "uploaded_t": 1536944063,
+            "uploader": "openfoodfacts-contributors"
+        },
+        "18": {
+            "uploaded_t": 1536934609,
+            "uploader": "openfoodfacts-contributors",
+            "sizes": {
+                "100": {
+                    "h": 100,
+                    "w": 75
+                },
+                "400": {
+                    "w": 300,
+                    "h": 400
+                },
+                "full": {
+                    "w": 3024,
+                    "h": 4032
+                }
+            }
+        },
+        "21": {
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1536942802,
+            "sizes": {
+                "100": {
+                    "h": 100,
+                    "w": 56
+                },
+                "400": {
+                    "w": 225,
+                    "h": 400
+                },
+                "full": {
+                    "w": 2390,
+                    "h": 4250
+                }
+            }
+        },
+        "ingredients_fr": {
+            "white_magic": "false",
+            "imgid": "30",
+            "x2": "287",
+            "orientation": "0",
+            "x1": "12",
+            "geometry": "2772x554-120-2417",
+            "y2": "294.8125",
+            "angle": "0",
+            "y1": "239.8125",
+            "ocr": 1,
+            "sizes": {
+                "full": {
+                    "w": 2772,
+                    "h": 554
+                },
+                "400": {
+                    "h": 80,
+                    "w": 400
+                },
+                "100": {
+                    "h": 20,
+                    "w": 100
+                },
+                "200": {
+                    "h": 40,
+                    "w": 200
+                }
+            },
+            "rev": "83",
+            "normalize": "false"
+        },
+        "43": {
+            "sizes": {
+                "full": {
+                    "w": 2193,
+                    "h": 4032
+                },
+                "400": {
+                    "h": 400,
+                    "w": 218
+                },
+                "100": {
+                    "h": 100,
+                    "w": 54
+                }
+            },
+            "uploaded_t": 1602468357,
+            "uploader": "vikalex"
+        },
+        "front_it": {
+            "white_magic": "false",
+            "imgid": "1",
+            "x2": "0",
+            "geometry": "0x0-0-0",
+            "x1": "0",
+            "angle": "0",
+            "y2": "0",
+            "y1": "0",
+            "normalize": "false",
+            "rev": "79",
+            "sizes": {
+                "200": {
+                    "w": 109,
+                    "h": 200
+                },
+                "100": {
+                    "w": 55,
+                    "h": 100
+                },
+                "400": {
+                    "h": 400,
+                    "w": 219
+                },
+                "full": {
+                    "w": 656,
+                    "h": 1200
+                }
+            }
+        },
+        "front_de": {
+            "white_magic": null,
+            "x2": null,
+            "imgid": "40",
+            "y2": null,
+            "angle": null,
+            "y1": null,
+            "x1": null,
+            "geometry": "0x0-0-0",
+            "normalize": null,
+            "rev": "175",
+            "sizes": {
+                "400": {
+                    "w": 228,
+                    "h": 400
+                },
+                "full": {
+                    "h": 4032,
+                    "w": 2303
+                },
+                "200": {
+                    "w": 114,
+                    "h": 200
+                },
+                "100": {
+                    "h": 100,
+                    "w": 57
+                }
+            }
+        },
+        "29": {
+            "sizes": {
+                "100": {
+                    "w": 75,
+                    "h": 100
+                },
+                "full": {
+                    "w": 3024,
+                    "h": 4032
+                },
+                "400": {
+                    "h": 400,
+                    "w": 300
+                }
+            },
+            "uploaded_t": 1537094358,
+            "uploader": "openfoodfacts-contributors"
+        },
+        "40": {
+            "uploaded_t": 1602468194,
+            "uploader": "vikalex",
+            "sizes": {
+                "100": {
+                    "w": 57,
+                    "h": 100
+                },
+                "full": {
+                    "w": 2303,
+                    "h": 4032
+                },
+                "400": {
+                    "h": 400,
+                    "w": 228
+                }
+            }
+        },
+        "nutrition_de": {
+            "x2": null,
+            "imgid": "46",
+            "white_magic": null,
+            "normalize": null,
+            "rev": "194",
+            "sizes": {
+                "400": {
+                    "w": 325,
+                    "h": 400
+                },
+                "full": {
+                    "w": 2014,
+                    "h": 2475
+                },
+                "200": {
+                    "h": 200,
+                    "w": 163
+                },
+                "100": {
+                    "h": 100,
+                    "w": 81
+                }
+            },
+            "y1": null,
+            "angle": null,
+            "y2": null,
+            "geometry": "0x0-0-0",
+            "x1": null
+        },
+        "37": {
+            "sizes": {
+                "full": {
+                    "h": 1161,
+                    "w": 2064
+                },
+                "400": {
+                    "h": 225,
+                    "w": 400
+                },
+                "100": {
+                    "h": 56,
+                    "w": 100
+                }
+            },
+            "uploader": "annelaure2",
+            "uploaded_t": 1588857401
+        },
+        "front_fr": {
+            "normalize": "true",
+            "rev": "164",
+            "sizes": {
+                "400": {
+                    "h": 400,
+                    "w": 244
+                },
+                "full": {
+                    "w": 739,
+                    "h": 1210
+                },
+                "200": {
+                    "h": 200,
+                    "w": 122
+                },
+                "100": {
+                    "h": 100,
+                    "w": 61
+                }
+            },
+            "angle": "0",
+            "y2": "1360.015931372549",
+            "y1": "150.93749999999997",
+            "geometry": "739x1210-121-150",
+            "x1": "121.96568627450985",
+            "x2": "860.6715686274509",
+            "imgid": "36",
+            "white_magic": "false"
+        },
+        "46": {
+            "uploader": "vikalex",
+            "uploaded_t": 1602468531,
+            "sizes": {
+                "full": {
+                    "h": 2475,
+                    "w": 2014
+                },
+                "400": {
+                    "h": 400,
+                    "w": 325
+                },
+                "100": {
+                    "w": 81,
+                    "h": 100
+                }
+            }
+        },
+        "25": {
+            "sizes": {
+                "100": {
+                    "w": 56,
+                    "h": 100
+                },
+                "full": {
+                    "h": 2458,
+                    "w": 1382
+                },
+                "400": {
+                    "w": 225,
+                    "h": 400
+                }
+            },
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1536944744
+        },
+        "nutrition_fr": {
+            "white_magic": null,
+            "imgid": "38",
+            "x2": "-1",
+            "geometry": "0x0--1--1",
+            "x1": "-1",
+            "y2": "-1",
+            "y1": "-1",
+            "angle": 0,
+            "rev": "155",
+            "sizes": {
+                "400": {
+                    "w": 225,
+                    "h": 400
+                },
+                "full": {
+                    "w": 1161,
+                    "h": 2064
+                },
+                "200": {
+                    "w": 113,
+                    "h": 200
+                },
+                "100": {
+                    "w": 56,
+                    "h": 100
+                }
+            },
+            "normalize": null
+        },
+        "35": {
+            "sizes": {
+                "100": {
+                    "h": 100,
+                    "w": 75
+                },
+                "full": {
+                    "w": 1000,
+                    "h": 1333
+                },
+                "400": {
+                    "h": 400,
+                    "w": 300
+                }
+            },
+            "uploaded_t": 1584821903,
+            "uploader": "date-limite-app"
+        },
+        "28": {
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1537008532,
+            "sizes": {
+                "100": {
+                    "w": 100,
+                    "h": 64
+                },
+                "full": {
+                    "w": 3141,
+                    "h": 2013
+                },
+                "400": {
+                    "w": 400,
+                    "h": 256
+                }
+            }
+        },
+        "47": {
+            "sizes": {
+                "100": {
+                    "w": 75,
+                    "h": 100
+                },
+                "full": {
+                    "h": 1064,
+                    "w": 800
+                },
+                "400": {
+                    "h": 400,
+                    "w": 301
+                }
+            },
+            "uploader": "elcoco",
+            "uploaded_t": 1608374769
+        },
+        "30": {
+            "sizes": {
+                "100": {
+                    "w": 75,
+                    "h": 100
+                },
+                "full": {
+                    "h": 4032,
+                    "w": 3024
+                },
+                "400": {
+                    "w": 300,
+                    "h": 400
+                }
+            },
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1537094382
+        },
+        "20": {
+            "uploaded_t": 1536938971,
+            "uploader": "damaria",
+            "sizes": {
+                "100": {
+                    "h": 100,
+                    "w": 75
+                },
+                "400": {
+                    "h": 400,
+                    "w": 300
+                },
+                "full": {
+                    "h": 3302,
+                    "w": 2476
+                }
+            }
+        },
+        "44": {
+            "sizes": {
+                "100": {
+                    "w": 86,
+                    "h": 100
+                },
+                "full": {
+                    "w": 2163,
+                    "h": 2508
+                },
+                "400": {
+                    "h": 400,
+                    "w": 345
+                }
+            },
+            "uploaded_t": 1602468396,
+            "uploader": "vikalex"
+        },
+        "38": {
+            "uploaded_t": 1588857470,
+            "uploader": "annelaure2",
+            "sizes": {
+                "full": {
+                    "w": 1161,
+                    "h": 2064
+                },
+                "400": {
+                    "h": 400,
+                    "w": 225
+                },
+                "100": {
+                    "h": 100,
+                    "w": 56
+                }
+            }
+        },
+        "34": {
+            "uploader": "date-limite-app",
+            "uploaded_t": 1584740171,
+            "sizes": {
+                "100": {
+                    "h": 100,
+                    "w": 69
+                },
+                "400": {
+                    "w": 276,
+                    "h": 400
+                },
+                "full": {
+                    "h": 1449,
+                    "w": 1000
+                }
+            }
+        },
+        "24": {
+            "sizes": {
+                "100": {
+                    "h": 100,
+                    "w": 56
+                },
+                "400": {
+                    "w": 225,
+                    "h": 400
+                },
+                "full": {
+                    "h": 2458,
+                    "w": 1382
+                }
+            },
+            "uploaded_t": 1536944743,
+            "uploader": "openfoodfacts-contributors"
+        },
+        "32": {
+            "uploaded_t": 1538657140,
+            "uploader": "kiliweb",
+            "sizes": {
+                "400": {
+                    "w": 276,
+                    "h": 400
+                },
+                "full": {
+                    "h": 1200,
+                    "w": 828
+                },
+                "100": {
+                    "h": 100,
+                    "w": 69
+                }
+            }
+        },
+        "front_en": {
+            "x1": "0",
+            "geometry": "0x0-0-0",
+            "y1": "0",
+            "angle": "0",
+            "y2": "0",
+            "normalize": "false",
+            "sizes": {
+                "400": {
+                    "h": 400,
+                    "w": 228
+                },
+                "full": {
+                    "w": 2303,
+                    "h": 4032
+                },
+                "200": {
+                    "w": 114,
+                    "h": 200
+                },
+                "100": {
+                    "h": 100,
+                    "w": 57
+                }
+            },
+            "rev": "207",
+            "white_magic": "false",
+            "coordinates_image_size": "full",
+            "imgid": "40",
+            "x2": "0"
+        },
+        "26": {
+            "uploaded_t": 1536951333,
+            "uploader": "david45",
+            "sizes": {
+                "100": {
+                    "h": 98,
+                    "w": 100
+                },
+                "full": {
+                    "h": 1801,
+                    "w": 1844
+                },
+                "400": {
+                    "w": 400,
+                    "h": 391
+                }
+            }
+        },
+        "42": {
+            "sizes": {
+                "100": {
+                    "w": 57,
+                    "h": 100
+                },
+                "400": {
+                    "w": 228,
+                    "h": 400
+                },
+                "full": {
+                    "h": 4032,
+                    "w": 2294
+                }
+            },
+            "uploaded_t": 1602468327,
+            "uploader": "vikalex"
+        },
+        "23": {
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1536944104,
+            "sizes": {
+                "400": {
+                    "h": 400,
+                    "w": 300
+                },
+                "full": {
+                    "h": 3264,
+                    "w": 2448
+                },
+                "100": {
+                    "h": 100,
+                    "w": 75
+                }
+            }
+        },
+        "45": {
+            "sizes": {
+                "full": {
+                    "w": 2172,
+                    "h": 2565
+                },
+                "400": {
+                    "w": 339,
+                    "h": 400
+                },
+                "100": {
+                    "w": 85,
+                    "h": 100
+                }
+            },
+            "uploader": "vikalex",
+            "uploaded_t": 1602468462
+        },
+        "19": {
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1536938708,
+            "sizes": {
+                "full": {
+                    "h": 3302,
+                    "w": 2476
+                },
+                "400": {
+                    "h": 400,
+                    "w": 300
+                },
+                "100": {
+                    "h": 100,
+                    "w": 75
+                }
+            }
+        },
+        "33": {
+            "uploaded_t": 1560601171,
+            "uploader": "date-limite-app",
+            "sizes": {
+                "100": {
+                    "h": 100,
+                    "w": 69
+                },
+                "full": {
+                    "w": 276,
+                    "h": 400
+                },
+                "400": {
+                    "w": 276,
+                    "h": 400
+                }
+            }
+        },
+        "39": {
+            "uploaded_t": 1593679906,
+            "uploader": "date-limite-app",
+            "sizes": {
+                "400": {
+                    "w": 300,
+                    "h": 400
+                },
+                "full": {
+                    "h": 1333,
+                    "w": 1000
+                },
+                "100": {
+                    "w": 75,
+                    "h": 100
+                }
+            }
+        },
+        "27": {
+            "uploader": "openfoodfacts-contributors",
+            "uploaded_t": 1537008531,
+            "sizes": {
+                "100": {
+                    "h": 56,
+                    "w": 100
+                },
+                "full": {
+                    "w": 3072,
+                    "h": 1728
+                },
+                "400": {
+                    "w": 400,
+                    "h": 225
+                }
+            }
+        }
+    },
+    "packagings": [
+        {
+            "shape": "en:food-can",
+            "material": "en:steel"
+        },
+        {
+            "material": "en:tetra-pak"
+        }
+    ],
+    "scans_n": 661,
+    "countries_hierarchy": [
+        "en:australia",
+        "en:austria",
+        "en:belgium",
+        "en:canada",
+        "en:france",
+        "en:germany",
+        "en:italy",
+        "en:netherlands",
+        "en:norway",
+        "en:spain",
+        "en:switzerland",
+        "en:united-states"
+    ],
+    "ingredients_text_with_allergens_de": "Tomate 99,8%, Salz. Nach dem \u00d6ffnen im K\u00fchlschrank aufbewahren und innerhalb Von 5 Tagen verbrauchen.",
+    "product_name": "Polpa chopped tomatoes",
+    "categories_old": "Pflanzliche Lebensmittel und Getr\u00e4nke, Pflanzliche Lebensmittel, Konserven, Frucht- und gem\u00fcsebasierte Lebensmittel, Konserven-Produkte auf pflanzlicher Basis, Gem\u00fcsebasierte Lebensmittel, Gem\u00fcsekonserven, Tomaten und Tomatenprodukte, Tomaten, Dosentomaten, Gesch\u00e4lte Tomaten, en:Tomato pulps",
+    "nucleotides_prev_tags": [],
+    "purchase_places_tags": [
+        "france"
+    ],
+    "packaging_text_en": "",
+    "compared_to_category": "en:tomato-pulps",
+    "purchase_places": "France",
+    "ingredients_text_debug": "tomates 99.8%, sel",
+    "expiration_date": "",
+    "categories_properties": {
+        "ciqual_food_code:en": "20047",
+        "agribalyse_proxy_food_code:en": "20169",
+        "agribalyse_food_code:en": "20047_3"
+    },
+    "ingredients_that_may_be_from_palm_oil_tags": [],
+    "packaging_text": "",
+    "unknown_nutrients_tags": [],
+    "categories_lc": "es",
+    "generic_name_de": "",
+    "update_key": "key_1617210491",
+    "languages_codes": {
+        "it": 2,
+        "de": 5,
+        "fr": 5,
+        "en": 3
+    },
+    "languages": {
+        "en:italian": 2,
+        "en:german": 5,
+        "en:french": 5,
+        "en:english": 3
+    },
+    "link": "",
+    "traces_from_ingredients": "",
+    "product_name_it": "Polpa",
+    "origins_hierarchy": [
+        "en:italy"
+    ],
+    "traces_hierarchy": [],
+    "image_thumb_url": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.100.jpg",
+    "minerals_tags": [],
+    "informers_tags": [
+        "date-limite-app",
+        "brunov",
+        "bojackhorseman",
+        "yuka.UjRNOEd2a1R2YWdJbnYwRTNCUGt4TzlxeG9TdGVrMndHY2dVSWc9PQ",
+        "kiliweb",
+        "openfoodfacts-contributors",
+        "michelemarieyvonne",
+        "damaria",
+        "david45",
+        "bibiroulette34",
+        "tacite",
+        "scanbot",
+        "inf",
+        "prepperapp",
+        "vikalex",
+        "elcoco",
+        "swipe-studio"
+    ],
+    "ingredients_percent_analysis": 1,
+    "image_nutrition_url": "https://static.openfoodfacts.org/images/products/80042556/nutrition_fr.155.400.jpg",
+    "image_front_small_url": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.200.jpg",
+    "additives_old_n": 0,
+    "ecoscore_data": {
+        "adjustments": {
+            "packaging": {
+                "warning": "unspecified_shape",
+                "value": -6,
+                "score": 38,
+                "non_recyclable_and_non_biodegradable_materials": 0,
+                "packagings": [
+                    {
+                        "ecoscore_shape_ratio": "1",
+                        "shape": "en:food-can",
+                        "ecoscore_material_score": "76",
+                        "material": "en:steel"
+                    },
+                    {
+                        "material": "en:tetra-pak",
+                        "ecoscore_material_score": "62",
+                        "shape": "en:unknown",
+                        "ecoscore_shape_ratio": 1
+                    }
+                ]
+            },
+            "origins_of_ingredients": {
+                "origins_from_origins_field": [
+                    "en:italy"
+                ],
+                "transportation_value": 8,
+                "aggregated_origins": [
+                    {
+                        "origin": "en:italy",
+                        "percent": 100
+                    }
+                ],
+                "transportation_score": "55.2217983333333",
+                "epi_value": 2,
+                "epi_score": "68.1052680236052",
+                "value": 10
+            },
+            "production_system": {},
+            "threatened_species": {}
+        },
+        "score": 101,
+        "grade": "a",
+        "status": "known",
+        "missing_data_warning": 1,
+        "missing": {
+            "packagings": 1
+        },
+        "agribalyse": {
+            "co2_distribution": "0.03993612",
+            "ef_consumption": "0.0042189169",
+            "score": 97,
+            "ef_total": "0.09830954700000001",
+            "ef_agriculture": "0.06582374299999999",
+            "co2_total": "0.62369712",
+            "code": "20047_3",
+            "ef_transportation": "0.015393985",
+            "name_en": "Tomato, raw",
+            "ef_processing": "0",
+            "co2_agriculture": "0.29259285",
+            "co2_consumption": "0.099564814",
+            "co2_transportation": "0.19160333",
+            "name_fr": "Tomate, crue",
+            "agribalyse_food_code": "20047_3",
+            "ef_packaging": "0",
+            "co2_packaging": "0",
+            "is_beverage": 0,
+            "dqr": "2.32",
+            "ef_distribution": "0.012872902",
+            "co2_processing": "0"
+        }
+    },
+    "ingredients_hierarchy": [
+        "en:tomato",
+        "en:vegetable",
+        "en:salt"
+    ],
+    "unique_scans_n": 444,
+    "minerals_prev_tags": [],
+    "origins_lc": "es",
+    "stores_tags": [
+        "intermarche",
+        "woolworths"
+    ],
+    "languages_hierarchy": [
+        "en:german",
+        "en:french",
+        "en:italian",
+        "en:english"
+    ],
+    "category_properties": {},
+    "additives_original_tags": [],
+    "categories": "Alimentos y bebidas de origen vegetal,Alimentos de origen vegetal,Conservas,Frutas y verduras y sus productos,Alimentos de origen vegetal en conserva,Verduras y hortalizas y sus productos,Verduras y hortalizas en conserva,Tomates y sus productos,Tomates,Tomates en conserva,Tomates pelados,Pulpa de tomate",
+    "nutrition_data": "on",
+    "no_nutrition_data": "",
+    "categories_properties_tags": [
+        "all-products",
+        "categories-known",
+        "agribalyse-food-code-20047-3",
+        "agribalyse-food-code-known",
+        "agribalyse-proxy-food-code-20169",
+        "agribalyse-proxy-food-code-known",
+        "ciqual-food-code-20047",
+        "ciqual-food-code-known",
+        "agribalyse-known",
+        "agribalyse-20047-3"
+    ],
+    "amino_acids_tags": [],
+    "traces_from_user": "(es) ",
+    "ingredients_text_it": "",
+    "url": "https://fr.openfoodfacts.org/produit/80042556/pulpe-fine-de-tomates-mutti",
+    "nova_groups_tags": [
+        "en:3-processed-foods"
+    ],
+    "origins_tags": [
+        "en:italy"
+    ],
+    "id": "80042556",
+    "nutrition_data_prepared": "",
+    "countries_lc": "es",
+    "allergens_from_ingredients": "",
+    "popularity_tags": [
+        "top-500-scans-2019",
+        "top-1000-scans-2019",
+        "top-5000-scans-2019",
+        "top-10000-scans-2019",
+        "top-50000-scans-2019",
+        "top-100000-scans-2019",
+        "at-least-5-scans-2019",
+        "at-least-10-scans-2019",
+        "top-75-percent-scans-2019",
+        "top-80-percent-scans-2019",
+        "top-85-percent-scans-2019",
+        "top-90-percent-scans-2019",
+        "top-500-fr-scans-2019",
+        "top-1000-fr-scans-2019",
+        "top-5000-fr-scans-2019",
+        "top-10000-fr-scans-2019",
+        "top-50000-fr-scans-2019",
+        "top-100000-fr-scans-2019",
+        "top-country-fr-scans-2019",
+        "at-least-5-fr-scans-2019",
+        "at-least-10-fr-scans-2019",
+        "top-100-it-scans-2019",
+        "top-500-it-scans-2019",
+        "top-1000-it-scans-2019",
+        "top-5000-it-scans-2019",
+        "top-10000-it-scans-2019",
+        "top-50000-it-scans-2019",
+        "top-100000-it-scans-2019",
+        "at-least-5-it-scans-2019",
+        "at-least-10-it-scans-2019",
+        "top-5000-de-scans-2019",
+        "top-10000-de-scans-2019",
+        "top-50000-de-scans-2019",
+        "top-100000-de-scans-2019",
+        "at-least-5-de-scans-2019",
+        "at-least-10-de-scans-2019",
+        "top-5000-be-scans-2019",
+        "top-10000-be-scans-2019",
+        "top-50000-be-scans-2019",
+        "top-100000-be-scans-2019",
+        "at-least-5-be-scans-2019",
+        "top-5000-es-scans-2019",
+        "top-10000-es-scans-2019",
+        "top-50000-es-scans-2019",
+        "top-100000-es-scans-2019",
+        "at-least-5-es-scans-2019",
+        "top-10-no-scans-2019",
+        "top-50-no-scans-2019",
+        "top-100-no-scans-2019",
+        "top-500-no-scans-2019",
+        "top-1000-no-scans-2019",
+        "top-5000-no-scans-2019",
+        "top-10000-no-scans-2019",
+        "top-50000-no-scans-2019",
+        "top-100000-no-scans-2019",
+        "at-least-5-no-scans-2019",
+        "top-10000-ch-scans-2019",
+        "top-50000-ch-scans-2019",
+        "top-100000-ch-scans-2019",
+        "at-least-5-ch-scans-2019",
+        "top-500-lu-scans-2019",
+        "top-1000-lu-scans-2019",
+        "top-5000-lu-scans-2019",
+        "top-10000-lu-scans-2019",
+        "top-50000-lu-scans-2019",
+        "top-100000-lu-scans-2019",
+        "top-10-fi-scans-2019",
+        "top-50-fi-scans-2019",
+        "top-100-fi-scans-2019",
+        "top-500-fi-scans-2019",
+        "top-1000-fi-scans-2019",
+        "top-5000-fi-scans-2019",
+        "top-10000-fi-scans-2019",
+        "top-50000-fi-scans-2019",
+        "top-100000-fi-scans-2019",
+        "top-100-au-scans-2019",
+        "top-500-au-scans-2019",
+        "top-1000-au-scans-2019",
+        "top-5000-au-scans-2019",
+        "top-10000-au-scans-2019",
+        "top-50000-au-scans-2019",
+        "top-100000-au-scans-2019",
+        "top-500-se-scans-2019",
+        "top-1000-se-scans-2019",
+        "top-5000-se-scans-2019",
+        "top-10000-se-scans-2019",
+        "top-50000-se-scans-2019",
+        "top-100000-se-scans-2019",
+        "top-10000-ma-scans-2019",
+        "top-50000-ma-scans-2019",
+        "top-100000-ma-scans-2019",
+        "top-5000-ie-scans-2019",
+        "top-10000-ie-scans-2019",
+        "top-50000-ie-scans-2019",
+        "top-100000-ie-scans-2019",
+        "top-5000-gp-scans-2019",
+        "top-10000-gp-scans-2019",
+        "top-50000-gp-scans-2019",
+        "top-100000-gp-scans-2019",
+        "top-10000-re-scans-2019",
+        "top-50000-re-scans-2019",
+        "top-100000-re-scans-2019",
+        "top-5000-nc-scans-2019",
+        "top-10000-nc-scans-2019",
+        "top-50000-nc-scans-2019",
+        "top-100000-nc-scans-2019",
+        "top-1000-ad-scans-2019",
+        "top-5000-ad-scans-2019",
+        "top-10000-ad-scans-2019",
+        "top-50000-ad-scans-2019",
+        "top-100000-ad-scans-2019",
+        "top-1000-lb-scans-2019",
+        "top-5000-lb-scans-2019",
+        "top-10000-lb-scans-2019",
+        "top-50000-lb-scans-2019",
+        "top-100000-lb-scans-2019",
+        "top-5000-at-scans-2019",
+        "top-10000-at-scans-2019",
+        "top-50000-at-scans-2019",
+        "top-100000-at-scans-2019",
+        "top-1000-th-scans-2019",
+        "top-5000-th-scans-2019",
+        "top-10000-th-scans-2019",
+        "top-50000-th-scans-2019",
+        "top-100000-th-scans-2019",
+        "top-500-scans-2020",
+        "top-1000-scans-2020",
+        "top-5000-scans-2020",
+        "top-10000-scans-2020",
+        "top-50000-scans-2020",
+        "top-100000-scans-2020",
+        "at-least-5-scans-2020",
+        "at-least-10-scans-2020",
+        "top-75-percent-scans-2020",
+        "top-80-percent-scans-2020",
+        "top-85-percent-scans-2020",
+        "top-90-percent-scans-2020",
+        "top-500-fr-scans-2020",
+        "top-1000-fr-scans-2020",
+        "top-5000-fr-scans-2020",
+        "top-10000-fr-scans-2020",
+        "top-50000-fr-scans-2020",
+        "top-100000-fr-scans-2020",
+        "top-country-fr-scans-2020",
+        "at-least-5-fr-scans-2020",
+        "at-least-10-fr-scans-2020",
+        "top-500-de-scans-2020",
+        "top-1000-de-scans-2020",
+        "top-5000-de-scans-2020",
+        "top-10000-de-scans-2020",
+        "top-50000-de-scans-2020",
+        "top-100000-de-scans-2020",
+        "at-least-5-de-scans-2020",
+        "at-least-10-de-scans-2020",
+        "top-500-it-scans-2020",
+        "top-1000-it-scans-2020",
+        "top-5000-it-scans-2020",
+        "top-10000-it-scans-2020",
+        "top-50000-it-scans-2020",
+        "top-100000-it-scans-2020",
+        "at-least-5-it-scans-2020",
+        "at-least-10-it-scans-2020",
+        "top-5000-es-scans-2020",
+        "top-10000-es-scans-2020",
+        "top-50000-es-scans-2020",
+        "top-100000-es-scans-2020",
+        "at-least-5-es-scans-2020",
+        "top-500-at-scans-2020",
+        "top-1000-at-scans-2020",
+        "top-5000-at-scans-2020",
+        "top-10000-at-scans-2020",
+        "top-50000-at-scans-2020",
+        "top-100000-at-scans-2020",
+        "at-least-5-at-scans-2020",
+        "top-5000-ch-scans-2020",
+        "top-10000-ch-scans-2020",
+        "top-50000-ch-scans-2020",
+        "top-100000-ch-scans-2020",
+        "at-least-5-ch-scans-2020",
+        "top-500-nl-scans-2020",
+        "top-1000-nl-scans-2020",
+        "top-5000-nl-scans-2020",
+        "top-10000-nl-scans-2020",
+        "top-50000-nl-scans-2020",
+        "top-100000-nl-scans-2020",
+        "top-10000-be-scans-2020",
+        "top-50000-be-scans-2020",
+        "top-100000-be-scans-2020",
+        "top-500-lu-scans-2020",
+        "top-1000-lu-scans-2020",
+        "top-5000-lu-scans-2020",
+        "top-10000-lu-scans-2020",
+        "top-50000-lu-scans-2020",
+        "top-100000-lu-scans-2020",
+        "top-1000-ro-scans-2020",
+        "top-5000-ro-scans-2020",
+        "top-10000-ro-scans-2020",
+        "top-50000-ro-scans-2020",
+        "top-100000-ro-scans-2020",
+        "top-500-nc-scans-2020",
+        "top-1000-nc-scans-2020",
+        "top-5000-nc-scans-2020",
+        "top-10000-nc-scans-2020",
+        "top-50000-nc-scans-2020",
+        "top-100000-nc-scans-2020",
+        "top-500-se-scans-2020",
+        "top-1000-se-scans-2020",
+        "top-5000-se-scans-2020",
+        "top-10000-se-scans-2020",
+        "top-50000-se-scans-2020",
+        "top-100000-se-scans-2020",
+        "top-100-no-scans-2020",
+        "top-500-no-scans-2020",
+        "top-1000-no-scans-2020",
+        "top-5000-no-scans-2020",
+        "top-10000-no-scans-2020",
+        "top-50000-no-scans-2020",
+        "top-100000-no-scans-2020",
+        "top-10000-re-scans-2020",
+        "top-50000-re-scans-2020",
+        "top-100000-re-scans-2020",
+        "top-500-ua-scans-2020",
+        "top-1000-ua-scans-2020",
+        "top-5000-ua-scans-2020",
+        "top-10000-ua-scans-2020",
+        "top-50000-ua-scans-2020",
+        "top-100000-ua-scans-2020",
+        "top-5000-fi-scans-2020",
+        "top-10000-fi-scans-2020",
+        "top-50000-fi-scans-2020",
+        "top-100000-fi-scans-2020",
+        "top-5000-pl-scans-2020",
+        "top-10000-pl-scans-2020",
+        "top-50000-pl-scans-2020",
+        "top-100000-pl-scans-2020",
+        "top-50-ee-scans-2020",
+        "top-100-ee-scans-2020",
+        "top-500-ee-scans-2020",
+        "top-1000-ee-scans-2020",
+        "top-5000-ee-scans-2020",
+        "top-10000-ee-scans-2020",
+        "top-50000-ee-scans-2020",
+        "top-100000-ee-scans-2020",
+        "top-1000-ae-scans-2020",
+        "top-5000-ae-scans-2020",
+        "top-10000-ae-scans-2020",
+        "top-50000-ae-scans-2020",
+        "top-100000-ae-scans-2020",
+        "top-1000-lb-scans-2020",
+        "top-5000-lb-scans-2020",
+        "top-10000-lb-scans-2020",
+        "top-50000-lb-scans-2020",
+        "top-100000-lb-scans-2020",
+        "top-500-hr-scans-2020",
+        "top-1000-hr-scans-2020",
+        "top-5000-hr-scans-2020",
+        "top-10000-hr-scans-2020",
+        "top-50000-hr-scans-2020",
+        "top-100000-hr-scans-2020"
+    ],
+    "generic_name_it": "",
+    "data_quality_errors_tags": [],
+    "origins": "Italia",
+    "lang": "en",
+    "data_quality_tags": [
+        "en:packaging-data-incomplete",
+        "en:ingredients-percent-analysis-ok",
+        "en:carbon-footprint-from-known-ingredients-but-not-from-meat-or-fish",
+        "en:ecoscore-packaging-unspecified-shape"
+    ],
+    "debug_param_sorted_langs": [
+        "en",
+        "de",
+        "fr",
+        "it"
+    ],
+    "data_quality_warnings_tags": [
+        "en:ecoscore-packaging-unspecified-shape"
+    ],
+    "interface_version_created": "20120622",
+    "traces": "",
+    "product_name_en": "Polpa chopped tomatoes",
+    "data_sources_tags": [
+        "database-foodrepo-openfood-ch",
+        "databases",
+        "app-yuka",
+        "apps"
+    ],
+    "codes_tags": [
+        "code-8",
+        "80042xxx",
+        "8004xxxx",
+        "800xxxxx",
+        "80xxxxxx",
+        "8xxxxxxx"
+    ],
+    "data_sources": "Database - FoodRepo / openfood.ch, Databases, App - yuka, Apps",
+    "brands": "Mutti",
+    "ingredients": [
+        {
+            "percent_min": "99.8",
+            "vegetarian": "yes",
+            "percent": "99.8",
+            "vegan": "yes",
+            "id": "en:tomato",
+            "percent_estimate": "99.8",
+            "percent_max": "99.8",
+            "text": "tomatoes of"
+        },
+        {
+            "text": "salt",
+            "id": "en:salt",
+            "percent_max": "0.200000000000003",
+            "percent_estimate": "0.200000000000003",
+            "vegan": "yes",
+            "percent_min": "0.200000000000003",
+            "vegetarian": "yes"
+        }
+    ],
+    "ciqual_food_name_tags": [
+        "unknown"
+    ],
+    "nova_group_debug": " -- ingredients/en:salt : 3",
+    "languages_tags": [
+        "en:german",
+        "en:french",
+        "en:italian",
+        "en:english",
+        "en:4",
+        "en:multilingual"
+    ],
+    "nutrition_score_warning_fruits_vegetables_nuts_from_category": "en:vegetables-based-foods",
+    "other_nutritional_substances_prev_tags": [],
+    "countries_tags": [
+        "en:australia",
+        "en:austria",
+        "en:belgium",
+        "en:canada",
+        "en:france",
+        "en:germany",
+        "en:italy",
+        "en:netherlands",
+        "en:norway",
+        "en:spain",
+        "en:switzerland",
+        "en:united-states"
+    ],
+    "ingredients_text_with_allergens_en": "tomatoes of 99,8%, salt",
+    "allergens_tags": [],
+    "carbon_footprint_percent_of_known_ingredients": "99.8",
+    "last_image_t": 1608374769,
+    "completeness": "0.8625",
+    "ingredients_text_with_allergens_it": "",
+    "carbon_footprint_from_known_ingredients_debug": "en:tomato 99.8% x 0.5 = 49.9 g - ",
+    "popularity_key": "19999500453",
+    "emb_codes_tags": [],
+    "ingredients_text_de": "Tomate 99,8%, Salz. Nach dem \u00d6ffnen im K\u00fchlschrank aufbewahren und innerhalb Von 5 Tagen verbrauchen.",
+    "pnns_groups_1": "Fruits and vegetables",
+    "correctors_tags": [
+        "brunov",
+        "date-limite-app",
+        "tacite-mass-editor",
+        "bojackhorseman",
+        "yuka.ZnBrOVFQUU9pUE02aTlvYjFCbnMwZHh2L01INVpHT1ljTEVUSVE9PQ",
+        "openfoodfacts-contributors",
+        "yuka.UjRNOEd2a1R2YWdJbnYwRTNCUGt4TzlxeG9TdGVrMndHY2dVSWc9PQ",
+        "yuka.WGI0eUFQc0cvcWhScDhZTzFEQ0oyUEl0M29PRVczM3VkK3dmSVE9PQ",
+        "yuka.RzQ0TkVLOG1tYUVTb2M4UnJ6ck8vZjE0bHJEM2ZtS1JNZW80SUE9PQ",
+        "yuka.WnZrd0tLTWV0cUVEdWYxbjJ3UFAxK0FyeXNLcWUzT2NOT1lRSVE9PQ",
+        "kiliweb",
+        "michelemarieyvonne",
+        "damaria",
+        "david45",
+        "bibiroulette34",
+        "tacite",
+        "yuka.ZS84d09wbzc5cUJWeHZNKzRrMzc0UDEzMW9PTkFuMjJJTU5MSUE9PQ",
+        "foodrepo",
+        "archanox",
+        "scanbot",
+        "musarana",
+        "inf",
+        "prepperapp",
+        "annelaure2",
+        "quentinbrd",
+        "antoine-la-galerie",
+        "vikalex",
+        "swipe-studio",
+        "thaialagata"
+    ],
+    "nutrition_grade_fr": "a",
+    "vitamins_prev_tags": [],
+    "known_ingredients_n": 3,
+    "data_quality_info_tags": [
+        "en:packaging-data-incomplete",
+        "en:ingredients-percent-analysis-ok",
+        "en:carbon-footprint-from-known-ingredients-but-not-from-meat-or-fish"
+    ],
+    "last_modified_t": 1611779329,
+    "_keywords": [
+        "producto",
+        "italia",
+        "mutti",
+        "de",
+        "alimento",
+        "chopped",
+        "pelado",
+        "bebida",
+        "polpa",
+        "tomate",
+        "verdura",
+        "origen",
+        "en",
+        "tomatoe",
+        "vegetal",
+        "fruta",
+        "hortaliza",
+        "pulpa",
+        "su",
+        "conserva"
+    ],
+    "ingredients_text": "tomatoes of 99,8%, salt",
+    "packaging_text_de": "",
+    "pnns_groups_2_tags": [
+        "vegetables",
+        "known"
+    ],
+    "ingredients_analysis_tags": [
+        "en:palm-oil-free",
+        "en:vegan",
+        "en:vegetarian"
+    ],
+    "nutrition_grades": "a",
+    "ingredients_n_tags": [
+        "2",
+        "1-10"
+    ],
+    "product_name_fr": "Pulpe fine de tomates",
+    "cities_tags": [],
+    "ingredients_tags": [
+        "en:tomato",
+        "en:vegetable",
+        "en:salt"
+    ],
+    "image_url": "https://static.openfoodfacts.org/images/products/80042556/front_fr.164.400.jpg",
+    "nutrient_levels_tags": [
+        "en:fat-in-low-quantity",
+        "en:saturated-fat-in-low-quantity",
+        "en:sugars-in-low-quantity",
+        "en:salt-in-moderate-quantity"
+    ],
+    "generic_name": "",
+    "nutrient_levels": {
+        "saturated-fat": "low",
+        "salt": "moderate",
+        "fat": "low",
+        "sugars": "low"
+    },
+    "emb_codes": "",
+    "ingredients_original_tags": [
+        "en:tomato",
+        "en:salt"
+    ],
+    "entry_dates_tags": [
+        "2018-09-09",
+        "2018-09",
+        "2018"
+    ],
+    "emb_codes_orig": "",
+    "rev": 213,
+    "image_nutrition_small_url": "https://static.openfoodfacts.org/images/products/80042556/nutrition_fr.155.200.jpg",
+    "ingredients_text_fr": "tomates 99,8%, sel",
+    "nutriscore_grade": "a",
+    "created_t": 1536519301,
+    "additives_tags": [],
+    "editors_tags": [
+        "inf",
+        "foodrepo",
+        "damaria",
+        "nebisa34",
+        "musarana",
+        "vikalex",
+        "yuka.VEl3cE9ZMEFnTUFVbnZRRjdndjgxZUo2OXBxQ2JEMjBFY1ZLSUE9PQ",
+        "thaialagata",
+        "yuka.WnZrd0tLTWV0cUVEdWYxbjJ3UFAxK0FyeXNLcWUzT2NOT1lRSVE9PQ",
+        "archanox",
+        "yuka.ZnBrOVFQUU9pUE02aTlvYjFCbnMwZHh2L01INVpHT1ljTEVUSVE9PQ",
+        "quentinbrd",
+        "tacite",
+        "yuka.UjRNOEd2a1R2YWdJbnYwRTNCUGt4TzlxeG9TdGVrMndHY2dVSWc9PQ",
+        "yuka.RzQ0TkVLOG1tYUVTb2M4UnJ6ck8vZjE0bHJEM2ZtS1JNZW80SUE9PQ",
+        "date-limite-app",
+        "prepperapp",
+        "david45",
+        "michelemarieyvonne",
+        "bibiroulette34",
+        "bojackhorseman",
+        "yuka.U29VZEFQc2VpS2dEeDg4UzBTaUV3dXhGbXFHeFVrcVJKTzhZSVE9PQ",
+        "antoine-la-galerie",
+        "didel",
+        "scanbot",
+        "agamitsudo",
+        "elcoco",
+        "swipe-studio",
+        "kiliweb",
+        "brunov",
+        "yuka.WEtjL0Vwc1pnTVpXdmZRNitTcU4wUGgrNkptWlRGbXNLdFVUSVE9PQ",
+        "annelaure2",
+        "yuka.ZS84d09wbzc5cUJWeHZNKzRrMzc0UDEzMW9PTkFuMjJJTU5MSUE9PQ",
+        "tacite-mass-editor",
+        "yuka.ZllNZkxia2ZsNk1SdC9Sbjh4K0p4dWxINXI2clQxT1NOdTVCSUE9PQ",
+        "openfoodfacts-contributors",
+        "yuka.WGI0eUFQc0cvcWhScDhZTzFEQ0oyUEl0M29PRVczM3VkK3dmSVE9PQ"
+    ],
+    "last_modified_by": "inf",
+    "other_nutritional_substances_tags": [],
+    "generic_name_en": "",
+    "nutrition_data_per": "100g",
+    "ingredients_debug": [
+        "tomates 99.8%",
+        ",",
+        null,
+        null,
+        null,
+        " sel"
+    ],
+    "nutrition_data_prepared_per": "100g",
+    "product_quantity": "400",
+    "traces_tags": [],
+    "sortkey": 1610285031,
+    "packaging_text_it": "",
+    "misc_tags": [
+        "en:nutrition-no-fiber",
+        "en:nutrition-fruits-vegetables-nuts-from-category",
+        "en:nutrition-fruits-vegetables-nuts-from-category-en-vegetables-based-foods",
+        "en:nutrition-no-fiber-or-fruits-vegetables-nuts",
+        "en:nutriscore-computed"
+    ],
+    "checkers_tags": [],
+    "origins_old": "Italie",
+    "labels": "",
+    "packaging_text_fr": "",
+    "fruits-vegetables-nuts_100g_estimate": 85,
+    "ecoscore_score": 101,
+    "ingredients_text_with_allergens_fr": "tomates 99,8%, sel",
+    "allergens": "",
+    "ingredients_from_or_that_may_be_from_palm_oil_n": 0,
+    "ingredients_from_palm_oil_n": 0,
+    "product_name_de": "Polpa tomatenfruchtfleisch",
+    "nutriscore_score": -4
 }
