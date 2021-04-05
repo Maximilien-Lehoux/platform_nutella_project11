@@ -92,7 +92,6 @@ def save_food(request):
 
 
 def details_food(request, product_id):
-
     food_detail = FoodSubstitute.objects.get(pk=int(product_id))
 
     context = {
@@ -101,6 +100,30 @@ def details_food(request, product_id):
 
     return render(request, 'food/details.html', context)
 
+
+def details_food_saved(request, product_id):
+    food_detail = FoodsSaved.objects.get(pk=int(product_id))
+
+    context = {
+            'food_detail': food_detail
+    }
+
+    return render(request, 'food/details.html', context)
+
+
+def substitutes_saved_user(request):
+    if request.user.is_authenticated:
+        current_user = request.user
+        substitutes_saved = FoodsSaved.objects.filter(user=current_user)
+
+        context = {
+            'substitutes_saved': substitutes_saved
+        }
+
+        return render(request, 'food/substitutes_saved_user.html', context)
+
+    elif not request.user.is_authenticated:
+        return redirect('accounts:login_page')
 
 
 

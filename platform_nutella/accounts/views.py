@@ -49,7 +49,15 @@ def connection_user(request):
     if not request.user.is_authenticated:
         return redirect('accounts:login_page')
     else:
-        return redirect('food:index')
+        if request.user.is_authenticated:
+            current_user = request.user
+            print(current_user)
+            infos_user = User.objects.get(pk=current_user.pk)
+            context = {
+                'infos_user': infos_user
+            }
+
+            return render(request, 'accounts/my_account.html', context)
 
 
 def disconnection_user(request):

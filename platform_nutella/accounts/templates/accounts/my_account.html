@@ -1,0 +1,24 @@
+{% extends 'food/base.html' %}
+
+{% block content %}
+
+<header class="page-section-title-research">
+</header>
+<section class="page-section food_researched">
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-center text-center">
+            <div class="col-lg-8">
+                <p>{{ infos_user.username }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- email Section -->
+  <section class="container-account">
+    <div class="row justify-content-center text-align-center">
+      <div class="container-emailaccount">
+        <p>{{ infos_user.email }}</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
