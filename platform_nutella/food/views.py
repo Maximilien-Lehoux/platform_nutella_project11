@@ -6,7 +6,6 @@ from django.conf.urls import url
 from django.conf import settings
 from django.shortcuts import redirect
 
-
 from .api_openfoodfact import DataApi
 from .models import Food, FoodSubstitute, FoodsSaved
 
@@ -30,7 +29,8 @@ def research(request):
     data_api_openfoodfact = DataApi(food_choose)
     data_products_category = data_api_openfoodfact.select_key_test()
 
-    name_food = Food(name=food_choose)
+    name_food_nutriscore = data_api_openfoodfact.get_nutriscore_food_choose()
+    name_food = Food(name=food_choose, nutriscore=name_food_nutriscore)
     name_food.save()
 
     for data_product_category in data_products_category:
@@ -54,13 +54,24 @@ def research(request):
                                           nutriments_sugars=sugar)
         food_substitutes.save()
 
-    foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
+    if name_food.nutriscore == "e":
+        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e")
+    if name_food.nutriscore == "d":
+        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d")
+    if name_food.nutriscore == "c":
+        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c")
+    if name_food.nutriscore == "b":
+        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c").exclude("b")
+    if name_food.nutriscore == "a":
+        foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
 
     context = {
-        'foods_substitutes': foods_substitutes
+        'foods_substitutes': foods_substitutes,
+        'name_food': name_food
     }
 
     return render(request, 'food/research.html', context)
+
 
 # env\Scripts\activate.bat
 
@@ -71,18 +82,20 @@ def save_food(request):
         food_substitute_id = request.POST.get("food_substitute_pk")
         current_user = request.user
 
-        food_substitute_choose = FoodSubstitute.objects.get(pk=int(food_substitute_id))
+        food_substitute_choose = FoodSubstitute.objects.get(
+            pk=int(food_substitute_id))
 
-        food_substitute_choose_save = FoodsSaved(name=food_substitute_choose.name,
-                                                 image=food_substitute_choose.image,
-                                                 nutriscore=food_substitute_choose.nutriscore,
-                                                 url=food_substitute_choose.url,
-                                                 user_id=current_user.id,
-                                                 nutriments_fat=food_substitute_choose.nutriments_fat,
-                                                 nutriments_fat_saturated=food_substitute_choose.nutriments_fat_saturated,
-                                                 nutriments_salt=food_substitute_choose.nutriments_salt,
-                                                 nutriments_sugars=food_substitute_choose.nutriments_sugars
-                                                 )
+        food_substitute_choose_save = FoodsSaved(
+            name=food_substitute_choose.name,
+            image=food_substitute_choose.image,
+            nutriscore=food_substitute_choose.nutriscore,
+            url=food_substitute_choose.url,
+            user_id=current_user.id,
+            nutriments_fat=food_substitute_choose.nutriments_fat,
+            nutriments_fat_saturated=food_substitute_choose.nutriments_fat_saturated,
+            nutriments_salt=food_substitute_choose.nutriments_salt,
+            nutriments_sugars=food_substitute_choose.nutriments_sugars
+            )
         food_substitute_choose_save.save()
 
     elif request.method == 'POST' and not request.user.is_authenticated:
@@ -105,7 +118,7 @@ def details_food_saved(request, product_id):
     food_detail = FoodsSaved.objects.get(pk=int(product_id))
 
     context = {
-            'food_detail': food_detail
+        'food_detail': food_detail
     }
 
     return render(request, 'food/details.html', context)
@@ -124,7 +137,3 @@ def substitutes_saved_user(request):
 
     elif not request.user.is_authenticated:
         return redirect('accounts:login_page')
-
-
-
-

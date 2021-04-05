@@ -32,12 +32,23 @@ class DataApi:
             'json': 'true',
         }
 
+    def get_nutriscore_food_choose(self):
+        response = requests.get(self.url,
+                                params=self.payload_products_generic_name)
+        if 'json' in response.headers.get('Content-Type'):
+            try:
+                data = response.json()["products"][0]["nutrition_grade_fr"]
+            except KeyError:
+                data = "e"
+            return data
+
     def get_categories_name_food(self):
         """Obtain the food category chosen by the user"""
         response = requests.get(self.url, params=self.payload_products_generic_name)
         if 'json' in response.headers.get('Content-Type'):
             try:
                 data = response.json()["products"][0]["categories"]
+                return data
             except KeyError:
                 data = "cassoulet"
                 return data
@@ -88,7 +99,8 @@ class DataApi:
 
 
 # exemple_data_api = DataApi("cassoulet")
-# data_substitute = exemple_data_api.select_key_test()
+# example_nutriscore = exemple_data_api.get_nutriscore_food_choose()
+# print(example_nutriscore)
 
 # example_fat = exemple_data_api.get_data_products_category("conserves")
 # print(example_fat)

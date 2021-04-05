@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Food(models.Model):
     """creation of the selected food table"""
     name = models.CharField(max_length=200)
+    nutriscore = models.CharField(max_length=200, null=True, blank=True)
 
 
 class FoodSubstitute(models.Model):
