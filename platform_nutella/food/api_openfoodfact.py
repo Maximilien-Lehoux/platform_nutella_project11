@@ -1,11 +1,12 @@
 import json
 import requests
 from django.shortcuts import redirect
+from django.contrib import messages
 
 # from .configuration import number_products
 # from .constants import INFO1, INFO2, INFO3, INFO4, URL_GENERAL
 
-number_products = 100
+number_products = 20
 
 URL_GENERAL = 'https://fr.openfoodfacts.org/cgi/search.pl'
 
@@ -38,7 +39,7 @@ class DataApi:
         if 'json' in response.headers.get('Content-Type'):
             try:
                 data = response.json()["products"][0]["nutrition_grade_fr"]
-            except KeyError:
+            except (IndexError, KeyError):
                 data = "e"
             return data
 
@@ -49,7 +50,7 @@ class DataApi:
             try:
                 data = response.json()["products"][0]["categories"]
                 return data
-            except KeyError:
+            except (IndexError, KeyError):
                 data = "cassoulet"
                 return data
         else:

@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.db import models
@@ -5,6 +6,7 @@ from django.contrib.auth import logout
 from django.conf.urls import url
 from django.conf import settings
 from django.shortcuts import redirect
+import django.contrib.messages
 
 from .api_openfoodfact import DataApi
 from .models import Food, FoodSubstitute, FoodsSaved
@@ -97,8 +99,11 @@ def save_food(request):
             nutriments_sugars=food_substitute_choose.nutriments_sugars
             )
         food_substitute_choose_save.save()
+        messages.success(request, "Produit sauvegardé")
 
     elif request.method == 'POST' and not request.user.is_authenticated:
+        messages.error(request, "Vous ne pouvez pas sauvegarder de produits "
+                                  "avant de vous connecter")
         return redirect('accounts:login_page')
 
     return redirect('food:index')
@@ -136,4 +141,6 @@ def substitutes_saved_user(request):
         return render(request, 'food/substitutes_saved_user.html', context)
 
     elif not request.user.is_authenticated:
+        messages.error(request, "Vous ne pouvez accéder à la page"
+                                " 'mes aliments' car vous n'êtes pas connecté")
         return redirect('accounts:login_page')

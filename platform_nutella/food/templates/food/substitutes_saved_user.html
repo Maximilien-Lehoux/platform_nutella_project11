@@ -18,13 +18,13 @@
         <div class="row">
 
             {% for substitute_saved in substitutes_saved %}
-                <div class="col-sm-4 text-center">
+                <div class="col-sm-4 text-center item_border">
                     <a href="/">
-                        <img class="img-responsive" src="{{ substitute_saved.image }}" alt="{{ substitute_saved.name }}">
+                        <img class="img-responsive image_food" src="{{ substitute_saved.image }}" alt="{{ substitute_saved.name }}">
                     </a>
-                    <h3><a href="{{ substitute_saved.url }}">{{ substitute_saved.name }}</a></h3>
+                    <h5>{{ substitute_saved.name }}</h5>
                     <a href="{% url 'food:details_food_saved' product_id=substitute_saved.pk %}">Fiche détails du produit</a>
-                    <h4>{{ substitute_saved.nutriscore }}</h4>
+                    <h4 class="badge-pill badge-primary badge-nutriscore text-uppercase">{{ substitute_saved.nutriscore }}</h4>
 
                 </div>
 
