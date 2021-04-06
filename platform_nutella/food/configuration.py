@@ -2,5 +2,5 @@
 
 # corresponds to the number of products that is retrieved
 # from the openfoodfact database
-number_products = 100
+number_products = 20
 

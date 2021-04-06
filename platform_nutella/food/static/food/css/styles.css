@@ -10245,6 +10245,14 @@ h2
     background-color: #E8A75D;
 }
 
+.badge-nutriscore-title{
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    font-size: 1em;
+    background-color: #E8A75D;
+}
+
 .image_food{
     position: relative;
     height: 150px;
