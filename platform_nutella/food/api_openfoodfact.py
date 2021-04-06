@@ -1,24 +1,26 @@
 import json
 import requests
 from django.shortcuts import redirect
+from django.contrib import messages
 
-# from .configuration import number_products
-# from .constants import INFO1, INFO2, INFO3, INFO4, URL_GENERAL
+from .configuration import number_products
+from .constants import INFO1, INFO2, INFO3, INFO4, URL_GENERAL, NUTRIMENTS,\
+    FAT, SATURATED_FAT, SUGAR, SALT
 
-number_products = 100
+# number_products = 20
 
-URL_GENERAL = 'https://fr.openfoodfacts.org/cgi/search.pl'
+# URL_GENERAL = 'https://fr.openfoodfacts.org/cgi/search.pl'
 
 # the different category keys to insert them into the database
-INFO1 = "product_name_fr"
-INFO2 = "image_front_thumb_url"
-INFO3 = "nutrition_grade_fr"
-INFO4 = "url"
-NUTRIMENTS = "nutriments"
-FAT = "fat"
-SATURATED_FAT = "saturated-fat"
-SUGAR = "sugars"
-SALT = "salt"
+# INFO1 = "product_name_fr"
+# INFO2 = "image_front_thumb_url"
+# INFO3 = "nutrition_grade_fr"
+# INFO4 = "url"
+# NUTRIMENTS = "nutriments"
+# FAT = "fat"
+# SATURATED_FAT = "saturated-fat"
+# SUGAR = "sugars"
+# SALT = "salt"
 
 
 class DataApi:
@@ -32,18 +34,29 @@ class DataApi:
             'json': 'true',
         }
 
+    def get_nutriscore_food_choose(self):
+        response = requests.get(self.url,
+                                params=self.payload_products_generic_name)
+        if 'json' in response.headers.get('Content-Type'):
+            try:
+                data = response.json()["products"][0]["nutrition_grade_fr"]
+            except (IndexError, KeyError):
+                data = "e"
+            return data
+
     def get_categories_name_food(self):
         """Obtain the food category chosen by the user"""
         response = requests.get(self.url, params=self.payload_products_generic_name)
-        # if 'json' in response.headers.get('Content-Type'):
-        try:
-            data = response.json()["products"][0]["categories"]
-        except KeyError:
-            data = "cassoulet"
-            return data
-        # else:
-            # print('response content is not in json format.')
-            # data = 'spam'
+        if 'json' in response.headers.get('Content-Type'):
+            try:
+                data = response.json()["products"][0]["categories"]
+                return data
+            except (IndexError, KeyError):
+                data = "cassoulet"
+                return data
+        else:
+            print('response content is not in json format.')
+            data = 'spam'
         return data
 
     def get_data_products_category(self, category_product):
@@ -58,8 +71,6 @@ class DataApi:
         }
         response = requests.get(self.url, params=payload_substitutes).json()
         data = response["products"]
-        with open("data_file.json", "w") as write_file:
-            json.dump(data, write_file, indent=4)
         return data
 
     def select_key_test(self, key1=INFO1, key2=INFO2, key3=INFO3, key4=INFO4,
@@ -86,12 +97,4 @@ class DataApi:
         category = categories_list[0]
         return category
 
-
-exemple_data_api = DataApi("cassoulet")
-data_substitute = exemple_data_api.select_key_test()
-
-# example_fat = exemple_data_api.get_data_products_category("conserves")
-# print(example_fat)
-
-print(data_substitute)
 

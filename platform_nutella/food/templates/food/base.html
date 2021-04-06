@@ -21,10 +21,25 @@
         <link rel="stylesheet" type="text/css" href="{% static 'food/css/styles.css' %}" />
     </head>
     <body id="page-top">
+
+    {% for message in messages %}
+            <div class="container-fluid p-0">
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ message }}
+                </div>
+            </div>
+    {% endfor %}
+
+
+
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container write_navbar">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <a class="navbar-brand js-scroll-trigger" href="{% url 'food:index' %}">
                     <img class="logo_pur_beurre" src="{% static 'food/img/logo_pur_beurre.png' %}"/> Pur beurre</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -35,23 +50,44 @@
                                 <label for="name"></label>
                                 {% csrf_token %}
                                 <input type="text" id="name" name="food_research" size="10" placeholder="Chercher">
-
                             </form>
+                        </a></li>
 
+                        {% if user.is_authenticated %}
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:connection_user' %}">
+                                    <figure>
+
+                                        <img class="logo_user" src="{% static 'food/img/logo_user.png' %}"/>
+                                        <figcaption>Mon compte</figcaption>
+                                    </figure>
+                                </a></li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:connection_user' %}">
+                                <figure>
+                                    <img class="logo_user" src="{% static 'food/img/logo_user.png' %}"/>
+                                    <figcaption>S'identifier</figcaption>
+                                </figure>
+                            </a></li>
+                        {% endif %}
+
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'food:substitutes_saved_user' %}">
+                            <figure>
+                                <img class="logo_carrot" src="{% static 'food/img/logo_carrot.png' %}"/>
+                                <figcaption>Mes aliments</figcaption>
+                            </figure>
                         </a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:connection_user' %}">
-                            <img class="logo_user" src="{% static 'food/img/logo_user.png' %}"/>
-                        </a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">
-                            <img class="logo_carrot" src="{% static 'food/img/logo_carrot.png' %}"/>
-                        </a></li>
+
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:disconnection_user' %}">
-                            <img class="logo_disconnection" src="{% static 'food/img/logo_disconnection.png' %}"/>
+                            <figure>
+                                <img class="logo_disconnection" src="{% static 'food/img/logo_disconnection.png' %}"/>
+                                <figcaption>Déconnexion</figcaption>
+                            </figure>
                         </a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
         <div class="line_nav_space"></div>
 
         {% block content %}{% endblock %}
