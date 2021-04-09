@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.db import models
 from django.contrib.auth import logout
@@ -110,7 +110,7 @@ def save_food(request):
 
 
 def details_food(request, product_id):
-    food_detail = FoodSubstitute.objects.get(pk=int(product_id))
+    food_detail = get_object_or_404(FoodSubstitute, pk=int(product_id))
 
     context = {
         'food_detail': food_detail
@@ -120,7 +120,7 @@ def details_food(request, product_id):
 
 
 def details_food_saved(request, product_id):
-    food_detail = FoodsSaved.objects.get(pk=int(product_id))
+    food_detail = get_object_or_404(FoodsSaved, pk=int(product_id))
 
     context = {
         'food_detail': food_detail
