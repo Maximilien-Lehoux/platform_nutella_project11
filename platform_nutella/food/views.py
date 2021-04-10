@@ -10,22 +10,42 @@ import django.contrib.messages
 
 from .api_openfoodfact import DataApi
 from .models import Food, FoodSubstitute, FoodsSaved
+from .form_food import ResearchFood
 
 
 def index(request):
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    form = ResearchFood()
+
+    return render(request, 'food/index.html', {'form': form})
+=======
+=======
     """receives "true" when data bar searches for and displays index"""
+>>>>>>> main
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         return redirect('food:research')
 
     return render(request, 'food/index.html')
+>>>>>>> test_search
 
 
 def research(request):
     """receives data entered by the user and displays the substitutes"""
     Food.objects.all().delete()
 
+<<<<<<< HEAD
+
+    food_choose = "Cassoulet"
+=======
     food_choose = request.POST.get("food_research")
+<<<<<<< HEAD
+    print(food_choose)
+>>>>>>> test_search
+=======
+>>>>>>> main
 
     data_api_openfoodfact = DataApi(food_choose)
     data_products_category = data_api_openfoodfact.select_key_test()
@@ -106,9 +126,25 @@ def save_food(request):
     return redirect('food:index')
 
 
+<<<<<<< HEAD
+def select_food(request):
+    if request.method == 'POST':
+        form = ResearchFood(request.POST)
+        # create a form instance and populate it with data from the request:
+        if form.is_valid():
+            test_food_choose = request.POST.get("research_food")
+            print(test_food_choose)
+
+    else:
+        form = ResearchFood()
+
+    return render(request, 'food/index.html', {'form': form})
+
+=======
 def details_food(request, product_id):
     """display the details of the substitute"""
     food_detail = get_object_or_404(FoodSubstitute, pk=int(product_id))
+>>>>>>> main
 
     context = {
         'food_detail': food_detail
