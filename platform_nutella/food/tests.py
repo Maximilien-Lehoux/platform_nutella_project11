@@ -86,6 +86,16 @@ class TestViewsProducts(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(old_db_food_saved + 1, new_db_food_saved)
 
+    def test_new_food_saved_not_login(self):
+        self.client.logout()
+        old_db_food_saved = FoodsSaved.objects.count()
+        data = {"food_substitute_pk": self.substitute.id}
+        response = self.client.post(reverse('food:save_food'), data)
+        new_db_food_saved = FoodsSaved.objects.count()
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(old_db_food_saved + 1, new_db_food_saved)
+
+
     def test_research(self):
         data = {"food_research": "Cassoulet"}
         response = self.client.post(reverse('food:research'), data)
