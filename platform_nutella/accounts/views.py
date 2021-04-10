@@ -22,7 +22,6 @@ def login_page(request):
         else:
             messages.error(request, "l'identifiant ou le mot de passe "
                                     "sont invalides")
-            return redirect('accounts:login_page')
 
     else:
         form = FormLogin()
@@ -58,7 +57,6 @@ def connection_user(request):
     else:
         if request.user.is_authenticated:
             current_user = request.user
-            print(current_user)
             infos_user = User.objects.get(pk=current_user.pk)
             context = {
                 'infos_user': infos_user

@@ -6,14 +6,7 @@ from .models import Food, FoodSubstitute, FoodsSaved
 from .models import User
 
 
-class IndexPageTestCase(TestCase):
-    def test_index_page(self):
-        """test that the index page returns a 200"""
-        response = self.client.get(reverse('food:index'))
-        self.assertEqual(response.status_code, 200)
-
-
-class TestViewsProducts(TestCase):
+class TestViewsFood(TestCase):
     def setUp(self):
         self.user = User.objects.create(username='Arthur', last_name='H',
                                         email='arthurH@gmail.com')
@@ -43,6 +36,11 @@ class TestViewsProducts(TestCase):
                                           nutriments_sugars="0",
                                           user_id=self.user.id)
         self.substitute_saved.save()
+
+    def test_index_page_return_200(self):
+        """test that the index page returns a 200"""
+        response = self.client.get(reverse('food:index'))
+        self.assertEqual(response.status_code, 200)
 
     def test_substitutes_saved_user_return_200_user_logged(self):
         self.client.login(username="Arthur", password="1234")
@@ -95,11 +93,9 @@ class TestViewsProducts(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(old_db_food_saved, new_db_food_saved)
 
-
     def test_research(self):
         data = {"food_research": "Cassoulet"}
         response = self.client.post(reverse('food:research'), data)
         self.assertEqual(response.status_code, 200)
-
 
 
