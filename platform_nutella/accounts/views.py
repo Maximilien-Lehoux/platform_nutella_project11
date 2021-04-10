@@ -2,41 +2,36 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .form import NameForm, FormLogin
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import redirect
+from django.contrib import messages
 
 
 def login_page(request):
-    # if this is a POST request we need to process the form data
+    """display of the login form and user login"""
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = FormLogin(request.POST)
         user_name = request.POST.get("user_name")
         password = request.POST.get("password")
-        # check whether it's valid
         user = authenticate(request, username=user_name, password=password)
         if user is not None:
             login(request, user)
-            # Redirect to a success page.
-            return render(request, 'accounts/connexion_page.html')
+            messages.success(request, "vous êtes connectés, vous pouvez "
+                                      "enregistrer vos produits")
+            return redirect('food:index')
         else:
-            # Return an 'invalid login' error message.
-            return HttpResponse('login invalid')
+            messages.error(request, "l'identifiant ou le mot de passe "
+                                    "sont invalides")
 
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = FormLogin()
 
     return render(request, 'accounts/login.html', {'form': form})
 
 
-# def register(request):
-    # return render(request, 'accounts/register.html')
-
-
 def register(request):
-    # if this is a POST request we need to process the form data
+    """display of registration form and user registration"""
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = NameForm(request.POST)
         name = request.POST.get("your_name")
         email = request.POST.get("email")
@@ -45,13 +40,38 @@ def register(request):
         # check whether it's valid:
         if form.is_valid() and password == password2:
             User.objects.create_user(name, email, password)
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponse('thanks')
+            messages.success(request, "vous êtes enregistrés, "
+                                      "vous pouvez-vous connecter")
+            return redirect('accounts:login_page')
 
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = NameForm()
 
     return render(request, 'accounts/register.html', {'form': form})
+
+
+def connection_user(request):
+    """association of the connection icon with the user's connection"""
+    if not request.user.is_authenticated:
+        return redirect('accounts:login_page')
+    else:
+        if request.user.is_authenticated:
+            current_user = request.user
+            infos_user = User.objects.get(pk=current_user.pk)
+            context = {
+                'infos_user': infos_user
+            }
+
+            return render(request, 'accounts/my_account.html', context)
+
+
+def disconnection_user(request):
+    """association of the disconnection icon with the user's disconnection"""
+    if request.user.is_authenticated:
+        logout(request)
+        messages.success(request, "vous êtes déconnectés")
+        return redirect('food:index')
+    else:
+        messages.error(request, "Vous ne pouvez pas vous déconnecter "
+                                "car vous n'êtes pas connectés")
+        return redirect('accounts:login_page')

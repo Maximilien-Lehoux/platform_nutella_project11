@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^food/', include('food.urls')),
     url(r'^accounts/', include('accounts.urls')),
-    url(r'^admin/', admin.site.urls)
+    url(r'^admin_content/', admin.site.urls)
 ]
 
 if settings.DEBUG:

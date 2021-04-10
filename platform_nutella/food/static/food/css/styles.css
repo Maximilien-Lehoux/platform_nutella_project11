@@ -2531,13 +2531,13 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
+  background-color: #C45525;
+  border-color: #C45525;
 }
 .btn-success:hover {
   color: #fff;
-  background-color: #218838;
-  border-color: #1e7e34;
+  background-color: #86EBE6;
+  border-color: #86EBE6;
 }
 .btn-success:focus, .btn-success.focus {
   color: #fff;
@@ -10060,13 +10060,13 @@ hr.light {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    /*color: rgba(255, 255, 255, 0.7);*/
   }
   #mainNav .navbar-brand:hover {
     color: #fff;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    /*color: rgba(255, 255, 255, 0.7);*/
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -10081,6 +10081,7 @@ hr.light {
   }
   #mainNav.navbar-scrolled .navbar-brand {
     color: #212529;
+
   }
   #mainNav.navbar-scrolled .navbar-brand:hover {
     color: #f4623a;
@@ -10180,6 +10181,7 @@ header.masthead h1 {
 {
     height : 40px;
     width : auto;
+    color :  black;
 }
 
 .logo_carrot
@@ -10214,7 +10216,7 @@ h2
 
 .food_researched
 {
-    background-color : black;
+    background-color : #345A61;
     color : white;
     font-size : 40px;
 }
@@ -10235,3 +10237,58 @@ h2
     padding-top : 20px;
 }
 
+.badge-nutriscore{
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    font-size: 2em;
+    background-color: #E8A75D;
+}
+
+.badge-nutriscore-title{
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    font-size: 1em;
+    background-color: #E8A75D;
+}
+
+.image_food{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 0px 0px;
+    border: 1px solid dark;
+    border-radius: 10px;
+}
+
+.save_btn{
+    margin-bottom : 50px;
+}
+
+.link_detail_product{
+    font-size : 15px;
+}
+
+.item_border{
+    padding-top : 25px;
+    border : 1px #E8A75D solid ;
+    border-radius : 10px;
+}
+
+.container-emailaccount{
+    font-size: 3em;
+    font-weight: bold;
+    vertical-align: middle;
+    border: 5px solid #345A61;
+    border-radius: 20px;
+    margin: 1em;
+    padding: 1em;
+}
+
+.police_body{
+    font-family: "Scope One", sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Open Sans", sans-serif;
+}

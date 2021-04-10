@@ -8,7 +8,8 @@
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-lg-8">
-                <p>Le gras c'est la vie !</p>
+                <p>{{ name_food.name }}</p>
+                <p class="badge-pill badge-primary badge-nutriscore-title text-uppercase">{{ name_food.nutriscore }}</p>
             </div>
         </div>
     </div>
@@ -18,20 +19,21 @@
         <div class="row">
 
             {% for food_substitute in foods_substitutes %}
-                <div class="col-sm-4 text-center">
-                    <a href="/">
-                        <img class="img-responsive" src="{{ food_substitute.image }}" alt="{{ food_substitute.name }}">
-                    </a>
-                    <h3><a href="{{ food_substitute.url }}">{{ food_substitute.name }}</a></h3>
-                    <h4>{{ food_substitute.nutriscore }}</h4>
+                <div class="col-sm-4 text-center item_border">
 
-                    <form action="{% url 'food:save_food' %}" method="post">
-                        {% csrf_token %}
+                        <img class="img-responsive image_food" src="{{ food_substitute.image }}" alt="{{ food_substitute.name }}">
 
-                        <input type="hidden" value="{{ food_substitute.pk }}" id="food_substitute_pk" name="food_substitute_pk">
+                        <h5>{{ food_substitute.name }}</h5>
+                        <h4 class="badge-pill badge-primary badge-nutriscore text-uppercase">{{ food_substitute.nutriscore }}</h4>
 
-                        <input type="submit" value="sauvegarder"  class="btn btn-success">
-                    </form>
+                        <a href="{% url 'food:details_food' product_id=food_substitute.pk %}">Fiche détails du produit</a>
+
+                        <form action="{% url 'food:save_food' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ food_substitute.pk }}" id="food_substitute_pk" name="food_substitute_pk">
+                            <input type="submit" value="sauvegarder"  class="btn btn-success save_btn">
+                        </form>
+
 
                 </div>
 
