@@ -93,7 +93,7 @@ class TestViewsProducts(TestCase):
         response = self.client.post(reverse('food:save_food'), data)
         new_db_food_saved = FoodsSaved.objects.count()
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(old_db_food_saved + 1, new_db_food_saved)
+        self.assertEqual(old_db_food_saved, new_db_food_saved)
 
 
     def test_research(self):
