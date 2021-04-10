@@ -144,3 +144,11 @@ def substitutes_saved_user(request):
         messages.error(request, "Vous ne pouvez accéder à la page"
                                 " 'mes aliments' car vous n'êtes pas connecté")
         return redirect('accounts:login_page')
+
+
+def contact(request):
+    return render(request, 'food/index.html')
+
+
+def legal_notice(request):
+    return render(request, 'food/legal_notice.html')

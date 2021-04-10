@@ -15,12 +15,15 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" type="text/css">
         <!-- Third party plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" type="text/css" href="{% static 'food/css/styles.css' %}" />
+
     </head>
-    <body id="page-top">
+    <body id="page-top" class="police_body">
 
     {% for message in messages %}
             <div class="container-fluid p-0">
@@ -98,9 +101,9 @@
         <footer class="bg-light py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2 offset-lg-4 small text-center text-muted">Mentions légales</div>
+                    <div class="col-lg-2 offset-lg-4 small text-center text-muted"><a href="{% url 'food:legal_notice'  %} ">Mentions légales</a></div>
                     <div class="col-lg-2 small text-center text-muted">
-                        <a href="#contact">Contact</a></div>
+                        <a href="{% url 'food:index'  %} ">Contact</a></div>
                 </div>
             </div>
         </footer>

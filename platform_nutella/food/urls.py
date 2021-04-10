@@ -11,6 +11,8 @@ urlpatterns = [
     path('details_food/<product_id>/', views.details_food, name="details_food"),
     path('details_food_saved/<product_id>/', views.details_food_saved, name="details_food_saved"),
     url(r'^index/$', views.index, name="index"),
+    url(r'^contact/$', views.contact, name="contact"),
+    url(r'^legal_notice/$', views.legal_notice, name="legal_notice"),
 ]
 
 app_name = 'food'
