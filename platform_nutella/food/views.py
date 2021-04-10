@@ -13,6 +13,7 @@ from .models import Food, FoodSubstitute, FoodsSaved
 
 
 def index(request):
+    """receives "true" when data bar searches for and displays index"""
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         return redirect('food:research')
@@ -21,10 +22,8 @@ def index(request):
 
 
 def research(request):
-    # logout(request)
-
+    """receives data entered by the user and displays the substitutes"""
     Food.objects.all().delete()
-    # Food.objects.all()
 
     food_choose = request.POST.get("food_research")
 
@@ -75,10 +74,8 @@ def research(request):
     return render(request, 'food/research.html', context)
 
 
-# env\Scripts\activate.bat
-
-
 def save_food(request):
+    """save the products choose when the user is logged in"""
     if request.method == 'POST' and request.user.is_authenticated:
         # create a form instance and populate it with data from the request:
         food_substitute_id = request.POST.get("food_substitute_pk")
@@ -110,6 +107,7 @@ def save_food(request):
 
 
 def details_food(request, product_id):
+    """display the details of the substitute"""
     food_detail = get_object_or_404(FoodSubstitute, pk=int(product_id))
 
     context = {
@@ -120,6 +118,7 @@ def details_food(request, product_id):
 
 
 def details_food_saved(request, product_id):
+    """display the details of the save substitute"""
     food_detail = get_object_or_404(FoodsSaved, pk=int(product_id))
 
     context = {
@@ -130,6 +129,7 @@ def details_food_saved(request, product_id):
 
 
 def substitutes_saved_user(request):
+    """displays the substitutes saved by the user"""
     if request.user.is_authenticated:
         current_user = request.user
         substitutes_saved = FoodsSaved.objects.filter(user=current_user)
