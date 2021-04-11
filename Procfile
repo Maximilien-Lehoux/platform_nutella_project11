@@ -1,1 +1,1 @@
-web: gunicorn purbeurre-maximilien.wsgi
+web: gunicorn platform_nutella.wsgi
