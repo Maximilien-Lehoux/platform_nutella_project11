@@ -28,10 +28,10 @@ SECRET_KEY = 'm(^baopoih8c&m-n4smw4i13ul#k#=zg$m38h=^stgrhywofv!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
+# if os.environ.get('ENV') == 'PRODUCTION':
+    # DEBUG = False
+# else:
+DEBUG = True
 
 ALLOWED_HOSTS = ['purbeurre-maximilien.herokuapp.com']
 # ALLOWED_HOSTS = ['']
