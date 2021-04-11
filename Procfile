@@ -1,1 +1,1 @@
-web: gunicorn platform_nutella.wsgi
+web: gunicorn --pythonpath platform_nutella platform_nutella.wsgi
