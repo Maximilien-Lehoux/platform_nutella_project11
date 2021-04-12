@@ -30,9 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'm(^baopoih8c&m-n4smw4i13ul#k#=zg$m38h
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # if os.environ.get('ENV') == 'PRODUCTION':
-# DEBUG = False
+DEBUG = False
 # else:
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'purbeurre-maximilien.herokuapp.com']
 
