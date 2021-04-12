@@ -81,7 +81,7 @@ ROOT_URLCONF = 'platform_nutella.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # param de base []
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -144,6 +144,44 @@ USE_L10N = True
 
 USE_TZ = True
 
+################################changement jusqu'à##################
+# Logging
+# improve
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
+                       'pathname=%(pathname)s lineno=%(lineno)s ' +
+                       'funcname=%(funcName)s %(message)s'),
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'testlogger': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        }
+    }
+}
+
+DEBUG_PROPAGATE_EXCEPTIONS = True
+#########################fin du changement #######################
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -162,7 +200,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 
     # Extra places for collectstatic to find static files.
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, '/static/'),  # changement 'static' en '/static/'
     )
 
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
