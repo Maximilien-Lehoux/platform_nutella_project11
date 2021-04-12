@@ -34,8 +34,8 @@ SECRET_KEY = 'm(^baopoih8c&m-n4smw4i13ul#k#=zg$m38h=^stgrhywofv!'
 # else:
 DEBUG = True
 
-# ALLOWED_HOSTS = ['purbeurre-maximilien.herokuapp.com']
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['purbeurre-maximilien.herokuapp.com']
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
