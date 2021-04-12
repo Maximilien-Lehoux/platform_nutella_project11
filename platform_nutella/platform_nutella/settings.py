@@ -152,7 +152,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 # STATIC_URL = '/staticfiles/'
-STATIC_URL = '/static/'
 
 INTERNAL_IPS = ['127.0.0.1']
 
@@ -162,11 +161,11 @@ INTERNAL_IPS = ['127.0.0.1']
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-
+STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(PROJECT_ROOT, 'food/static/food/'),
 )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
