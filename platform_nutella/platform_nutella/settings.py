@@ -169,7 +169,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),  # changement 'static' en 'staticfiles'
 )
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
