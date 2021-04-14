@@ -110,24 +110,9 @@ def save_food(request):
     return redirect('food:index')
 
 
-
-def select_food(request):
-    if request.method == 'POST':
-        form = ResearchFood(request.POST)
-        # create a form instance and populate it with data from the request:
-        if form.is_valid():
-            test_food_choose = request.POST.get("research_food")
-            print(test_food_choose)
-
-    else:
-        form = ResearchFood()
-
-    return render(request, 'food/index.html', {'form': form})
-
 def details_food(request, product_id):
     """display the details of the substitute"""
     food_detail = get_object_or_404(FoodSubstitute, pk=int(product_id))
-
 
     context = {
         'food_detail': food_detail
