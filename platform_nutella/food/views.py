@@ -27,7 +27,7 @@ def research(request):
     """receives data entered by the user and displays the substitutes"""
 
     countdb = FoodSubstitute.objects.count()
-    if countdb >= 1000:
+    if countdb >= 10:
         Food.objects.all().delete()
 
     food_choose = request.POST.get("food_research")
@@ -38,36 +38,8 @@ def research(request):
     name_food_nutriscore = data_api_openfoodfact.get_nutriscore_food_choose()
     name_food_category = data_api_openfoodfact.get_categories_name_food()
 
-    if Food.objects.filter(category=name_food_category).exists():
-
-        food_id = Food.objects.get(category=name_food_category).id
-        foods_substitutes = FoodSubstitute.objects.filter(food_id=int(food_id))
-
-        food = Food.objects.get(name=food_choose)
-        name_food = food.name
-
-        if name_food_nutriscore == "e":
-            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e")
-        if name_food_nutriscore == "d":
-            foods_substitutes = FoodSubstitute.objects.exclude(
-                nutriscore="e").exclude(nutriscore="d")
-        if name_food_nutriscore == "c":
-            foods_substitutes = FoodSubstitute.objects.exclude(
-                nutriscore="e").exclude(nutriscore="d").exclude("c")
-        if name_food_nutriscore == "b":
-            foods_substitutes = FoodSubstitute.objects.exclude(
-                nutriscore="e").exclude(nutriscore="d").exclude("c").exclude(
-                "b")
-        if name_food_nutriscore == "a":
-            foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
-
-        context = {
-            'foods_substitutes': foods_substitutes,
-            'name_food': name_food
-        }
-
-        return render(request, 'food/research.html', context)
-
+    if Food.objects.filter(name=food_choose).exists():
+        name_food = Food.objects.get(name=food_choose)
     else:
         name_food = Food(name=food_choose,
                          nutriscore=name_food_nutriscore,
@@ -96,23 +68,34 @@ def research(request):
                                               nutriments_sugars=sugar)
             food_substitutes.save()
 
-        if name_food.nutriscore == "e":
-            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e")
-        if name_food.nutriscore == "d":
-            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d")
-        if name_food.nutriscore == "c":
-            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c")
-        if name_food.nutriscore == "b":
-            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c").exclude("b")
-        if name_food.nutriscore == "a":
-            foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
+    # food_id = Food.objects.get(category=name_food_category).id
+    food_id = name_food.pk
 
-        context = {
-            'foods_substitutes': foods_substitutes,
-            'name_food': name_food
-        }
+    if name_food.nutriscore == "e":
+        foods_substitutes = FoodSubstitute.objects.filter(
+            food_id=int(food_id)).exclude(nutriscore="e")
+    if name_food.nutriscore == "d":
+        foods_substitutes = FoodSubstitute.objects.filter(
+            food_id=int(food_id)).exclude(nutriscore="e").exclude(
+            nutriscore="d")
+    if name_food.nutriscore == "c":
+        foods_substitutes = FoodSubstitute.objects.filter(
+            food_id=int(food_id)).exclude(nutriscore="e").exclude(
+            nutriscore="d").exclude(nutriscore="c")
+    if name_food.nutriscore == "b":
+        foods_substitutes = FoodSubstitute.objects.filter(
+            food_id=int(food_id)).exclude(nutriscore="e").exclude(
+            nutriscore="d").exclude(nutriscore="c").exclude(nutriscore="b")
+    if name_food.nutriscore == "a":
+        foods_substitutes = FoodSubstitute.objects.filter(
+            food_id=int(food_id)).filter(nutriscore="a")
 
-        return render(request, 'food/research.html', context)
+    context = {
+        'foods_substitutes': foods_substitutes,
+        'name_food': name_food
+    }
+
+    return render(request, 'food/research.html', context)
 
 
 def save_food(request):
