@@ -27,7 +27,7 @@ def research(request):
     """receives data entered by the user and displays the substitutes"""
 
     countdb = FoodSubstitute.objects.count()
-    if countdb >= 10:
+    if countdb >= 1000:
         Food.objects.all().delete()
 
     food_choose = request.POST.get("food_research")
