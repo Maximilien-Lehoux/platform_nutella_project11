@@ -7,21 +7,6 @@ from .configuration import number_products
 from .constants import INFO1, INFO2, INFO3, INFO4, URL_GENERAL, NUTRIMENTS,\
     FAT, SATURATED_FAT, SUGAR, SALT
 
-# number_products = 20
-
-# URL_GENERAL = 'https://fr.openfoodfacts.org/cgi/search.pl'
-
-# the different category keys to insert them into the database
-# INFO1 = "product_name_fr"
-# INFO2 = "image_front_thumb_url"
-# INFO3 = "nutrition_grade_fr"
-# INFO4 = "url"
-# NUTRIMENTS = "nutriments"
-# FAT = "fat"
-# SATURATED_FAT = "saturated-fat"
-# SUGAR = "sugars"
-# SALT = "salt"
-
 
 class DataApi:
     """the request to the API which contains the parameters"""
@@ -50,9 +35,10 @@ class DataApi:
         if 'json' in response.headers.get('Content-Type'):
             try:
                 data = response.json()["products"][0]["categories"]
+                data = self.get_category_selected(data)
                 return data
             except (IndexError, KeyError):
-                data = "cassoulet"
+                data = "conserve"
                 return data
         else:
             print('response content is not in json format.')
@@ -78,8 +64,7 @@ class DataApi:
                         key8=SUGAR, key9=SALT):
         """The different keys are sorted and placed in lists"""
         list_general = []
-        categories = self.get_categories_name_food()
-        category = self.get_category_selected(categories)
+        category = self.get_categories_name_food()
 
         data = self.get_data_products_category(category)
         for item in data:

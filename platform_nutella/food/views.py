@@ -25,9 +25,10 @@ def index(request):
 
 def research(request):
     """receives data entered by the user and displays the substitutes"""
-    Food.objects.all().delete()
 
-    food_choose = "Cassoulet"
+    countdb = FoodSubstitute.objects.count()
+    if countdb >= 1000:
+        Food.objects.all().delete()
 
     food_choose = request.POST.get("food_research")
 
@@ -35,47 +36,83 @@ def research(request):
     data_products_category = data_api_openfoodfact.select_key_test()
 
     name_food_nutriscore = data_api_openfoodfact.get_nutriscore_food_choose()
-    name_food = Food(name=food_choose, nutriscore=name_food_nutriscore)
-    name_food.save()
+    name_food_category = data_api_openfoodfact.get_categories_name_food()
 
-    for data_product_category in data_products_category:
-        name = (data_product_category[0])
-        image = (data_product_category[1])
-        nutriscore = (data_product_category[2])
-        url = (data_product_category[3])
-        fat = (data_product_category[4])
-        fat_saturated = (data_product_category[5])
-        sugar = (data_product_category[6])
-        salt = (data_product_category[7])
+    if Food.objects.filter(category=name_food_category).exists():
 
-        food_substitutes = FoodSubstitute(name=name,
-                                          image=image,
-                                          nutriscore=nutriscore,
-                                          url=url,
-                                          food_id=name_food.pk,
-                                          nutriments_fat=fat,
-                                          nutriments_fat_saturated=fat_saturated,
-                                          nutriments_salt=salt,
-                                          nutriments_sugars=sugar)
-        food_substitutes.save()
+        food_id = Food.objects.get(category=name_food_category).id
+        foods_substitutes = FoodSubstitute.objects.filter(food_id=int(food_id))
 
-    if name_food.nutriscore == "e":
-        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e")
-    if name_food.nutriscore == "d":
-        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d")
-    if name_food.nutriscore == "c":
-        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c")
-    if name_food.nutriscore == "b":
-        foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c").exclude("b")
-    if name_food.nutriscore == "a":
-        foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
+        food = Food.objects.get(name=food_choose)
+        name_food = food.name
 
-    context = {
-        'foods_substitutes': foods_substitutes,
-        'name_food': name_food
-    }
+        if name_food_nutriscore == "e":
+            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e")
+        if name_food_nutriscore == "d":
+            foods_substitutes = FoodSubstitute.objects.exclude(
+                nutriscore="e").exclude(nutriscore="d")
+        if name_food_nutriscore == "c":
+            foods_substitutes = FoodSubstitute.objects.exclude(
+                nutriscore="e").exclude(nutriscore="d").exclude("c")
+        if name_food_nutriscore == "b":
+            foods_substitutes = FoodSubstitute.objects.exclude(
+                nutriscore="e").exclude(nutriscore="d").exclude("c").exclude(
+                "b")
+        if name_food_nutriscore == "a":
+            foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
 
-    return render(request, 'food/research.html', context)
+        context = {
+            'foods_substitutes': foods_substitutes,
+            'name_food': name_food
+        }
+
+        return render(request, 'food/research.html', context)
+
+    else:
+        name_food = Food(name=food_choose,
+                         nutriscore=name_food_nutriscore,
+                         category=name_food_category)
+
+        name_food.save()
+
+        for data_product_category in data_products_category:
+            name = (data_product_category[0])
+            image = (data_product_category[1])
+            nutriscore = (data_product_category[2])
+            url = (data_product_category[3])
+            fat = (data_product_category[4])
+            fat_saturated = (data_product_category[5])
+            sugar = (data_product_category[6])
+            salt = (data_product_category[7])
+
+            food_substitutes = FoodSubstitute(name=name,
+                                              image=image,
+                                              nutriscore=nutriscore,
+                                              url=url,
+                                              food_id=name_food.pk,
+                                              nutriments_fat=fat,
+                                              nutriments_fat_saturated=fat_saturated,
+                                              nutriments_salt=salt,
+                                              nutriments_sugars=sugar)
+            food_substitutes.save()
+
+        if name_food.nutriscore == "e":
+            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e")
+        if name_food.nutriscore == "d":
+            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d")
+        if name_food.nutriscore == "c":
+            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c")
+        if name_food.nutriscore == "b":
+            foods_substitutes = FoodSubstitute.objects.exclude(nutriscore="e").exclude(nutriscore="d").exclude("c").exclude("b")
+        if name_food.nutriscore == "a":
+            foods_substitutes = FoodSubstitute.objects.filter(nutriscore="a")
+
+        context = {
+            'foods_substitutes': foods_substitutes,
+            'name_food': name_food
+        }
+
+        return render(request, 'food/research.html', context)
 
 
 def save_food(request):
