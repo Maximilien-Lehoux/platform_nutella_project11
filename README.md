@@ -1,8 +1,11 @@
-# 1. Objet du projet 8 - plateforme PurBeurre (branche master)
+# 1. Projet 8 - plateforme PurBeurre (branche master)
+# Projet 10 : selectionner la branche "project10"
+
 lien https://purbeurre-maximilien.herokuapp.com/
+
 Réalisation d'une application qui permet de trouver des substituts plus sains à des aliments trop gras ou trop sucrés à partir de recherches sur la plateforme libre et ouverte OpenFoodFacts dont l'objectif est de répertorier les caractéristiques nutritives de produits alimentaires commercialisés dans le monde entier.
 
-# (Projet 10 : selectionner la branche "project10")
+
 
 ## 2. Ressources extérieures utilisées :
 API OpenFoodFacts.
