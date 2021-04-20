@@ -75,3 +75,5 @@ def disconnection_user(request):
         messages.error(request, "Vous ne pouvez pas vous déconnecter "
                                 "car vous n'êtes pas connectés")
         return redirect('accounts:login_page')
+
+
