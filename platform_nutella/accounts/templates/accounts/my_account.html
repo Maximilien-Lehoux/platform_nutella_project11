@@ -1,6 +1,7 @@
 {% extends 'food/base.html' %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 
 <header class="page-section-title-research">
 </header>
@@ -21,6 +22,20 @@
         </div>
     </div>
 </section>
+    <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <h1 class="mt-2">Tu peux modifier tes informations</h1>
+              <hr class="mt-0 mb-4">
+
+                 <form action="{% url 'accounts:connection_user' %}" method="post" novalidate>
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <input type="submit" value="Modifier"  class="btn btn-success">
+                 </form>
+            </div>
+          </div>
+    </div>
 
 <section>
 

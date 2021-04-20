@@ -19,7 +19,10 @@ class FormLogin(forms.Form):
 
 
 class ChangeInfosUser(forms.Form):
-    email = forms.CharField(label="Email", max_length=100)
-    password = forms.CharField(label="Mot de passe", max_length=100)
-
-
+    username = forms.CharField(label="Nom d'utilisateur", max_length=100,
+                               required=False)
+    email = forms.EmailField(label="Email", max_length=100, required=False)
+    password = forms.CharField(label="Mot de passe", max_length=100,
+                               required=False, widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Confirmation", max_length=100,
+                                required=False, widget=forms.PasswordInput)
