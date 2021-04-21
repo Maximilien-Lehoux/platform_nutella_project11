@@ -77,6 +77,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'platform_nutella.urls'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 TEMPLATES = [
     {

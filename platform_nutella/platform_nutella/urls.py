@@ -18,6 +18,8 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
 
 from food import views
 
@@ -25,7 +27,15 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^food/', include('food.urls')),
     url(r'^accounts/', include('accounts.urls')),
-    url(r'^admin_content/', admin.site.urls)
+    url(r'^admin_content/', admin.site.urls),
+    # path('accounts/', include('django.contrib.auth.urls')),
+    path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(
+        template_name='accounts/password_reset_done.html'),
+        name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="accounts/password_reset_confirm.html"), name='password_reset_confirm'),
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(
+        template_name='accounts/password_reset_complete.html'),
+        name='password_reset_complete'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
