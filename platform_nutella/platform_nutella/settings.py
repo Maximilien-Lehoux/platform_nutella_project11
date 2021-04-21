@@ -34,7 +34,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'purbeurre-maximilien.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'purbeurre11-maximilien.herokuapp.com']
 
 
 MESSAGE_TAGS = {
