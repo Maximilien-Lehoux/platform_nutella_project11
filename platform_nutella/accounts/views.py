@@ -64,7 +64,6 @@ def connection_user(request):
 
     elif request.user.is_authenticated:
         current_user = request.user
-        print(current_user.email)
         infos_user = User.objects.get(pk=current_user.pk)
         # form = ChangeInfosUser()
 
@@ -103,7 +102,7 @@ def connection_user(request):
                 modification.save()
                 messages.success(request,
                                  "Votre mot de passe est modifié")
-                # return redirect("accounts:connection_user")
+                return redirect("accounts:login_page")
             return redirect("accounts:connection_user")
         else:
             form = ChangeInfosUser()
@@ -141,6 +140,7 @@ def password_reset_request(request):
                     c = {
                     "email":user.email,
                     'domain':'127.0.0.1:8000',
+                    # 'domain': 'your-website-name.com',
                     'site_name': 'Website',
                     "uid": urlsafe_base64_encode(force_bytes(user.pk)),
                     "user": user,
@@ -149,7 +149,7 @@ def password_reset_request(request):
                     }
                     email = render_to_string(email_template_name, c)
                     try:
-                        send_mail(subject, email, 'admin@example.com',
+                        send_mail(subject, email, 'admin@example.com',  # emai = 'AWS_verified_email_address'
                                   [user.email], fail_silently=False)
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
