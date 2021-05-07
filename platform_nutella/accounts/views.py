@@ -128,6 +128,7 @@ def disconnection_user(request):
 
 
 def password_reset_request(request):
+    """method that allows to obtain a new password when it is forgotten"""
     if request.method == "POST":
         password_reset_form = PasswordResetForm(request.POST)
         if password_reset_form.is_valid():
