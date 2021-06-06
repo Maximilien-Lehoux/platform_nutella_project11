@@ -15,7 +15,6 @@ from .form_food import ResearchFood
 
 def index(request):
     """receives "true" when data bar searches for and displays index"""
-    buuuuuuug
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         return redirect('food:research')
