@@ -12,6 +12,8 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 
+from .manager import UserAccount
+
 
 def login_page(request):
     """display of the login form and user login"""
@@ -73,35 +75,11 @@ def connection_user(request):
             new_password = request.POST.get("password")
             new_password2 = request.POST.get("password2")
 
-            if User.objects.filter(username=username).exists():
-                messages.error(request, "l'identifiant existe")
-                return redirect('accounts:connection_user')
-            elif User.objects.filter(email=email).exists():
-                messages.error(request, "le mail existe")
-                return redirect('accounts:connection_user')
-            elif User.objects.filter(password=new_password).exists():
-                messages.error(request, "le mot de passe existe")
-                return redirect('accounts:connection_user')
+            account_user = UserAccount()
+            account_user.change_infos(username, email, new_password,
+                                      new_password2, request, form,
+                                      current_user)
 
-            if form.is_valid() and username != "":
-                current_user.username = username
-                current_user.save()
-                messages.success(request, "Votre nom d'utilisateur est modifié")
-
-            if form.is_valid() and email != "":
-                current_user.email = email
-                current_user.save()
-                messages.success(request,
-                                 "Votre email est modifié")
-
-            if form.is_valid() and new_password == new_password2 \
-                    and new_password != "":
-                modification = User.objects.get(username=current_user.username)
-                modification.set_password(new_password)
-                modification.save()
-                messages.success(request,
-                                 "Votre mot de passe est modifié")
-                return redirect("accounts:login_page")
             return redirect("accounts:connection_user")
         else:
             form = ChangeInfosUser()

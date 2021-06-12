@@ -36,7 +36,6 @@ class TestViewsFood(TestCase):
         response = self.client.post(reverse('accounts:password_reset'), data)
         self.assertEqual(response.status_code, 200)
 
-
     def test_register_page_return_200(self):
         response = self.client.get(reverse('accounts:register'))
         self.assertEqual(response.status_code, 200)
@@ -57,7 +56,7 @@ class TestViewsFood(TestCase):
         self.client.login(username="Arthur", password="1234")
         data = {"username": "", "email": "", "password": "4567", "password2": "4567"}
         response = self.client.post(reverse('accounts:connection_user'), data)
-        self.assertEqual(response.url, "/accounts/login/")
+        self.assertEqual(response.url, "/accounts/connection_user/")
         self.assertEqual(response.status_code, 302)
 
     def test_connection_page_return_200_with_change_username(self):
@@ -66,8 +65,6 @@ class TestViewsFood(TestCase):
         response = self.client.post(reverse('accounts:connection_user'), data)
         self.assertEqual(response.url, "/accounts/connection_user/")
         self.assertEqual(response.status_code, 302)
-
-
 
     def test_icon_connection_page_return_302_without_login(self):
         self.client.logout()
