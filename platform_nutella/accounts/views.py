@@ -13,7 +13,6 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 
 
-
 def login_page(request):
     """display of the login form and user login"""
     if request.method == 'POST':
