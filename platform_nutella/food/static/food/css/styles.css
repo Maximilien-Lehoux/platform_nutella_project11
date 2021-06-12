@@ -10180,20 +10180,20 @@ header.masthead h1 {
 .logo_user
 {
     height : 40px;
-    width : auto;
+    width : 40px;
     color :  black;
 }
 
 .logo_carrot
 {
-    height : 50px;
-    width : auto;
+    height : 40px;
+    width : 40px;
 }
 
 .logo_disconnection
 {
     height : 40px;
-    width : auto;
+    width : 40px;
 }
 
 h2
@@ -10291,4 +10291,9 @@ h2
 }
 h1, h2, h3, h4, h5, h6{
     font-family: "Open Sans", sans-serif;
+}
+
+.form_nav_base
+{
+    padding-top : 20px;
 }

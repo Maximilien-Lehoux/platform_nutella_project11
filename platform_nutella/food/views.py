@@ -8,9 +8,9 @@ from django.conf import settings
 from django.shortcuts import redirect
 import django.contrib.messages
 
-from .api_openfoodfact import DataApi
+
 from .models import Food, FoodSubstitute, FoodsSaved
-from .form_food import ResearchFood
+from .manager import ResearchFood, DatabaseSaveFood
 
 
 def index(request):
@@ -24,75 +24,13 @@ def index(request):
 
 def research(request):
     """receives data entered by the user and displays the substitutes"""
-
-    countdb = FoodSubstitute.objects.count()
-    if countdb >= 1000:
-        Food.objects.all().delete()
+    research_food = ResearchFood()
+    # If count database > 1000
+    research_food.delete_database()
 
     food_choose = request.POST.get("food_research")
 
-    data_api_openfoodfact = DataApi(food_choose)
-    data_products_category = data_api_openfoodfact.select_key_test()
-
-    name_food_nutriscore = data_api_openfoodfact.get_nutriscore_food_choose()
-    name_food_category = data_api_openfoodfact.get_categories_name_food()
-
-    if Food.objects.filter(name=food_choose).exists():
-        name_food = Food.objects.get(name=food_choose)
-    else:
-        name_food = Food(name=food_choose,
-                         nutriscore=name_food_nutriscore,
-                         category=name_food_category)
-
-        name_food.save()
-
-        for data_product_category in data_products_category:
-            name = (data_product_category[0])
-            image = (data_product_category[1])
-            nutriscore = (data_product_category[2])
-            url = (data_product_category[3])
-            fat = (data_product_category[4])
-            fat_saturated = (data_product_category[5])
-            sugar = (data_product_category[6])
-            salt = (data_product_category[7])
-
-            food_substitutes = FoodSubstitute(name=name,
-                                              image=image,
-                                              nutriscore=nutriscore,
-                                              url=url,
-                                              food_id=name_food.pk,
-                                              nutriments_fat=fat,
-                                              nutriments_fat_saturated=fat_saturated,
-                                              nutriments_salt=salt,
-                                              nutriments_sugars=sugar)
-            food_substitutes.save()
-
-    # food_id = Food.objects.get(category=name_food_category).id
-    food_id = name_food.pk
-
-    if name_food.nutriscore == "e":
-        foods_substitutes = FoodSubstitute.objects.filter(
-            food_id=int(food_id)).exclude(nutriscore="e")
-    if name_food.nutriscore == "d":
-        foods_substitutes = FoodSubstitute.objects.filter(
-            food_id=int(food_id)).exclude(nutriscore="e").exclude(
-            nutriscore="d")
-    if name_food.nutriscore == "c":
-        foods_substitutes = FoodSubstitute.objects.filter(
-            food_id=int(food_id)).exclude(nutriscore="e").exclude(
-            nutriscore="d").exclude(nutriscore="c")
-    if name_food.nutriscore == "b":
-        foods_substitutes = FoodSubstitute.objects.filter(
-            food_id=int(food_id)).exclude(nutriscore="e").exclude(
-            nutriscore="d").exclude(nutriscore="c").exclude(nutriscore="b")
-    if name_food.nutriscore == "a":
-        foods_substitutes = FoodSubstitute.objects.filter(
-            food_id=int(food_id)).filter(nutriscore="a")
-
-    context = {
-        'foods_substitutes': foods_substitutes,
-        'name_food': name_food
-    }
+    context = research_food.get_context_food(food_choose)
 
     return render(request, 'food/research.html', context)
 
@@ -107,18 +45,12 @@ def save_food(request):
         food_substitute_choose = FoodSubstitute.objects.get(
             pk=int(food_substitute_id))
 
-        food_substitute_choose_save = FoodsSaved(
-            name=food_substitute_choose.name,
-            image=food_substitute_choose.image,
-            nutriscore=food_substitute_choose.nutriscore,
-            url=food_substitute_choose.url,
-            user_id=current_user.id,
-            nutriments_fat=food_substitute_choose.nutriments_fat,
-            nutriments_fat_saturated=food_substitute_choose.nutriments_fat_saturated,
-            nutriments_salt=food_substitute_choose.nutriments_salt,
-            nutriments_sugars=food_substitute_choose.nutriments_sugars
-            )
-        food_substitute_choose_save.save()
+        database_save_food = DatabaseSaveFood()
+
+        database_save_food.save_food(
+            food_substitute_choose, current_user
+        )
+
         messages.success(request, "Produit sauvegardé")
 
     elif request.method == 'POST' and not request.user.is_authenticated:

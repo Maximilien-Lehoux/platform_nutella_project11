@@ -49,10 +49,13 @@
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger">
 
-                            <form action="{% url 'food:research' %}" method="post">
+                            <form class="input-group input-group-sm-mb-3 mx-auto form_nav_base" action="{% url 'food:research' %}" method="post">
                                 <label for="name"></label>
                                 {% csrf_token %}
-                                <input type="text" id="name" name="food_research" size="10" placeholder="Chercher">
+                                 <input type="text" class="form-control searchInput" id="name" name="food_research" size="10" placeholder="Produits">
+                                 <span class="input-group-btn">
+                                    <input type="submit" value="Chercher"  class="btn btn-success input-group">
+                                 </span>
                             </form>
                         </a></li>
 
