@@ -47,36 +47,3 @@ class UserAccount:
             messages.success(request,
                              "Votre mot de passe est modifié")
             return redirect("accounts:login_page")
-
-    def forgot_password(self, request, password_reset_form):
-        if password_reset_form.is_valid():
-            data = password_reset_form.cleaned_data['email']
-            associated_users = User.objects.filter(Q(email=data))
-            if associated_users.exists():
-                for user in associated_users:
-                    subject = "requête mot de passe"
-                    email_template_name = "accounts/password_reset_email.txt"
-                    c = {
-                    "email":user.email,
-                    'domain':'127.0.0.1:8000',
-                    # 'domain': 'your-website-name.com',
-                    'site_name': 'Website',
-                    "uid": urlsafe_base64_encode(force_bytes(user.pk)),
-                    "user": user,
-                    'token': default_token_generator.make_token(user),
-                    'protocol': 'http',
-                    }
-                    email = render_to_string(email_template_name, c)
-                    try:
-                        send_mail(subject, email, 'admin@example.com',  # email = 'AWS_verified_email_address'
-                                  [user.email], fail_silently=False)
-                    except BadHeaderError:
-                        return HttpResponse('Invalid header found.')
-
-                    messages.success(request, 'Un message contenant les '
-                                              'instructions de '
-                                              'réinitialisation du mot de '
-                                              'passe a été envoyé dans votre '
-                                              'boîte de réception.')
-                    return redirect("food:index")
-            messages.error(request, 'Un e-mail invalide a été saisi.')

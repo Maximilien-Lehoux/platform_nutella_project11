@@ -59,9 +59,41 @@ class TestViewsFood(TestCase):
         self.assertEqual(response.url, "/accounts/connection_user/")
         self.assertEqual(response.status_code, 302)
 
-    def test_connection_page_return_200_with_change_username(self):
+    def test_connection_page_return_302_with_change_username(self):
         self.client.login(username="Arthur", password="1234")
         data = {"username": "Merlin", "email": "", "password": "", "password2": ""}
+        response = self.client.post(reverse('accounts:connection_user'), data)
+        self.assertEqual(response.url, "/accounts/connection_user/")
+        self.assertEqual(response.status_code, 302)
+
+    def test_connection_page_return_302_with_change_email(self):
+        self.client.login(username="Arthur", password="1234")
+        data = {"username": "", "email": "merlin@gmail.com", "password": "",
+                "password2": ""}
+        response = self.client.post(reverse('accounts:connection_user'), data)
+        self.assertEqual(response.url, "/accounts/connection_user/")
+        self.assertEqual(response.status_code, 302)
+
+    def test_connection_page_return_302_with_change_email_exist(self):
+        self.client.login(username="Arthur", password="1234")
+        data = {"username": "", "email": "arthurH@gmail.com", "password": "",
+                "password2": ""}
+        response = self.client.post(reverse('accounts:connection_user'), data)
+        self.assertEqual(response.url, "/accounts/connection_user/")
+        self.assertEqual(response.status_code, 302)
+
+    def test_connection_page_return_302_with_change_username_exist(self):
+        self.client.login(username="Arthur", password="1234")
+        data = {"username": "Arthur", "email": "", "password": "",
+                "password2": ""}
+        response = self.client.post(reverse('accounts:connection_user'), data)
+        self.assertEqual(response.url, "/accounts/connection_user/")
+        self.assertEqual(response.status_code, 302)
+
+    def test_connection_page_return_302_with_change_password_exist(self):
+        self.client.login(username="Arthur", password="1234")
+        data = {"username": "Arthur", "email": "", "password": "1234",
+                "password2": "1234"}
         response = self.client.post(reverse('accounts:connection_user'), data)
         self.assertEqual(response.url, "/accounts/connection_user/")
         self.assertEqual(response.status_code, 302)
@@ -82,5 +114,3 @@ class TestViewsFood(TestCase):
         response = self.client.get(reverse('accounts:disconnection_user'))
         self.assertEqual(response.url, "/accounts/login/")
         self.assertEqual(response.status_code, 302)
-
-
