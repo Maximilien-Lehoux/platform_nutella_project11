@@ -81,16 +81,18 @@ ROOT_URLCONF = 'platform_nutella.urls'
 EMAIL_BACKEND = 'django_ses.SESBackend'
 AWS_SES_REGION_NAME = "us-east-2" #(ex: us-east-2)
 AWS_SES_REGION_ENDPOINT ='email.us-east-2.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
+# AWS_ACCESS_KEY_ID = "AKIAXH4UXP3SE4MLVRMD"
+# AWS_SECRET_ACCESS_KEY = "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"
 
-if os.environ.get('ENV') == 'PRODUCTION':
+# if os.environ.get('ENV') == 'PRODUCTION':
     # EMAIL_BACKEND = 'django_ses.SESBackend'
     # AWS_ACCESS_KEY_ID = 'don45nogo45ouyho45hy5'
     # AWS_SECRET_ACCESS_KEY = 'orebgojtiopj45tpngpnerpg'
     # AWS_SES_REGION_NAME = 'eu-central-1'
     # AWS_SES_REGION_ENDPOINT = 'email.ap-southeast-2.amazonaws.com'
-    pass
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    # pass
+# else:
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 TEMPLATES = [
     {
